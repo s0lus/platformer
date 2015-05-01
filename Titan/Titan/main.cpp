@@ -52,37 +52,37 @@ int main()
 	float newVolume = NULL;
 
 	MusicSettings musicSettings;
-	musicSettings.ReadSoundSettings(volume);
+	musicSettings.readSoundSettings(volume);
 
 	InMenuMusic menuMusic;
-	menuMusic.LoadMusic(volume);
-	menuMusic.PlayMusic("menu");
+	menuMusic.loadMusic(volume);
+	menuMusic.playMusic("menu");
 
 	InGameMusic gameMusic;
-	gameMusic.LoadMusic(volume);
+	gameMusic.loadMusic(volume);
 
 	while (screen >= 0)
 	{
 		// Music
 		if (screen == 0)
 		{
-			gameMusic.StopMusic("game");
-			menuMusic.PlayMusic("menu");
+			gameMusic.stopMusic("game");
+			menuMusic.playMusic("menu");
 		}
 
 		if (screen == 1)
 		{
-			menuMusic.StopMusic("menu");
-			gameMusic.PlayMusic();
+			menuMusic.stopMusic("menu");
+			gameMusic.playMusic();
 		}
 
 		// Change volume
 		if (screen != 5)
 		{
-			musicSettings.ReadSoundSettings(volumeCheck);
+			musicSettings.readSoundSettings(volumeCheck);
 			newVolume = (volume != volumeCheck) ? volumeCheck : volume;
-			menuMusic.MenuVolume(newVolume);
-			gameMusic.GameVolume(newVolume);
+			menuMusic.menuVolume(newVolume);
+			gameMusic.gameVolume(newVolume);
 		}
 
 		// Main loop for screens

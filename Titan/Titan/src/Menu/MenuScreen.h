@@ -14,8 +14,6 @@ public:
 	MenuScreen();
 	~MenuScreen();
 
-	virtual int Run(sf::RenderWindow &window);
+	int Run(sf::RenderWindow &window);
 
-private:
-	bool playing;
 };

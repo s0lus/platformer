@@ -12,5 +12,5 @@ public:
 	GraphicsScreen();
 	~GraphicsScreen();
 
-	virtual int Run(sf::RenderWindow &window);
+	int Run(sf::RenderWindow &window);
 };

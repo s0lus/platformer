@@ -14,11 +14,11 @@ public:
 	InMenuMusic();
 	~InMenuMusic();
 
-	void LoadMusic(float &volume);
-	void PlayMusic(std::string music);
-	void StopMusic(std::string which);
+	void loadMusic(float &volume);
+	void playMusic(std::string music);
+	void stopMusic(std::string which);
 
-	void MenuVolume(float &volume);
+	void menuVolume(float &volume);
 };
 
 
@@ -33,9 +33,9 @@ public:
 	InGameMusic();
 	~InGameMusic();
 
-	void LoadMusic(float &volume);
-	void PlayMusic();
-	void StopMusic(std::string which);
+	void loadMusic(float &volume);
+	void playMusic();
+	void stopMusic(std::string which);
 
-	void GameVolume(float &volume);
+	void gameVolume(float &volume);
 };

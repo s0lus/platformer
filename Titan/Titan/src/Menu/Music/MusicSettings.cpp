@@ -9,7 +9,7 @@ MusicSettings::~MusicSettings()
 {}
 
 
-void MusicSettings::ReadSoundSettings(float &volume)
+void MusicSettings::readSoundSettings(float &volume)
 
 {
 	std::ifstream file;
@@ -26,7 +26,7 @@ void MusicSettings::ReadSoundSettings(float &volume)
 }
 
 
-void MusicSettings::WriteSoundSettings(float &volume)
+void MusicSettings::writeSoundSettings(float &volume)
 {
 	std::ofstream file;
 	file.open("settings/musicsettings.txt", std::ios::out);

@@ -69,10 +69,10 @@ int GameScreen::Run(sf::RenderWindow &window)
 		float time = clock.getElapsedTime().asMicroseconds();
 		clock.restart();
 
-		time = time / GameSpeed;  // здесь регулируем скорость игры
+		time = time / gameSpeed;  // здесь регулируем скорость игры
 
-		if (time > GameTick)
-			time = GameTick;
+		if (time > gameTick)
+			time = gameTick;
 
 		sf::Event event;
 		while (window.pollEvent(event))

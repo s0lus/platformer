@@ -22,13 +22,13 @@ public:
     //Конфигурация управления персонажем
 	std::map<std::string, bool> key;
 
-    bool CanShoot = true;
+    bool canShoot = true;
 
     //Управление персонажем
-	void KeyCheck();
+	void keyCheck();
 
     //Просчет столкновений
-	void Collision(int num);
+	void collision(int num);
 
     //Обновление состояния персонажа
 	void update(float time);

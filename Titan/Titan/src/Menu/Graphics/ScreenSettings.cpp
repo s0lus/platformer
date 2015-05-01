@@ -9,7 +9,7 @@ ScreenSettings::~ScreenSettings()
 {}
 
 
-bool ScreenSettings::getScreenSettigns()
+bool ScreenSettings::getScreenSettigns() const
 {
 	std::ifstream file;
 	file.open("settings/screensettings.txt");

@@ -14,5 +14,5 @@ public:
 	OptionsScreen();
 	~OptionsScreen();
 
-	virtual int Run(sf::RenderWindow &window);
+	int Run(sf::RenderWindow &window);
 };

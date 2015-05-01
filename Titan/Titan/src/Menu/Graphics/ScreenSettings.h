@@ -9,7 +9,6 @@ public:
 	ScreenSettings();
 	~ScreenSettings();
 
-	bool getScreenSettigns();
+	bool getScreenSettigns() const;
 	void setScreenSettings(bool screen);
 };
-

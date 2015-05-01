@@ -2,9 +2,7 @@
 
 
 MenuScreen::MenuScreen()
-{
-	playing = false;
-}
+{}
 
 
 MenuScreen::~MenuScreen()
@@ -105,7 +103,6 @@ int MenuScreen::Run(sf::RenderWindow &window)
 					// Game Screen
 					if (menu == 0)
 					{
-						playing = true;
 						return (1);
 					}
 

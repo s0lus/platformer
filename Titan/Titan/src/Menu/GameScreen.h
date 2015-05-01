@@ -22,11 +22,6 @@ public:
 	GameScreen();
 	~GameScreen();
 
-	virtual int Run(sf::RenderWindow &window);
+	int Run(sf::RenderWindow &window);
 
-private:
-	float movement_step;
-	float posx;
-	float posy;
-	sf::RectangleShape Rectangle;
 };

@@ -39,12 +39,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>F:\platformer\Dependencies\TinyXML\include;F:\platformer\Titan\Titan\src\Entity\Level;F:\platformer\Titan\Titan\src\Entity\Animation;F:\platformer\Dependencies\SFML\include;$(IncludePath)</IncludePath>
+    <IncludePath>F:\Repos\platformer\Titan\Titan\src\Entity\Level;F:\Repos\platformer\Titan\Titan\src\Entity\Animation;F:\Repos\platformer\Dependencies\SFML\include;F:\Repos\platformer\Titan\Titan\src\Entity\Animation\TinyXML;F:\Repos\platformer\Titan\Titan\src\Entity;F:\platformer\Titan\Titan\src\Entity\Level;F:\platformer\Titan\Titan\src\Entity\Animation;F:\platformer\Dependencies\SFML\include;$(IncludePath)</IncludePath>
     <LibraryPath>F:\platformer\Dependencies\SFML\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>F:\platformer\Dependencies\TinyXML\include;F:\platformer\Titan\Titan\src\Entity;F:\platformer\Titan\Titan\src\Entity\Level;F:\platformer\Titan\Titan\src\Entity\Animation;F:\platformer\Dependencies\SFML\include;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\platformer\Dependencies\SFML\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\Repos\platformer\Titan\Titan\src\Entity\Level;F:\Repos\platformer\Titan\Titan\src\Entity\Animation;F:\Repos\platformer\Dependencies\SFML\include;F:\Repos\platformer\Titan\Titan\src\Entity\Animation\TinyXML;F:\Repos\platformer\Titan\Titan\src\Entity;F:\platformer\Titan\Titan\src\Entity;F:\platformer\Titan\Titan\src\Entity\Level;F:\platformer\Titan\Titan\src\Entity\Animation;F:\platformer\Dependencies\SFML\include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\Repos\platformer\Dependencies\SFML\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

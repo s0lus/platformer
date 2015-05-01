@@ -22,29 +22,29 @@ wall:
 */
 
 //Скорость игры
-const int GameSpeed = 500;
+const int gameSpeed = 500;
 
 //Время игровой секунды
-const int GameTick = 40;
+const int gameTick = 40;
 
 //Ускорение свободного падения для объектов
 const float g = 0.0005;
 
 //Скорость передвижения персонажа
-const float WalkSpeed = 0.1;
+const float walkSpeed = 0.1;
 
 //Скорость подъема персонажа по лестнице
-const float ClimbUpSpeed = 0.05;
+const float climbUpSpeed = 0.05;
 //Скорость спуска персонажа по лестнице
-const float ClimbDownSpeed = 0.05;
+const float climbDownSpeed = 0.05;
 
 //Начальная скорость при прыжке персонажа
-const float JumpBoost = 0.35;
+const float jumpBoost = 0.35;
 
 //Скорость полета пули персонажа
-const float BulletSpeed = 0.2;
+const float bulletSpeed = 0.2;
 
 //Интервал, с которым стреляет противник
-const int ShootInterval = 300;
+const int shootInterval = 300;
 
 #endif // CONFIG

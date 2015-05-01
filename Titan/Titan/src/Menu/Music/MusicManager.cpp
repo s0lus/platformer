@@ -9,13 +9,13 @@ InMenuMusic::~InMenuMusic()
 {}
 
 
-void InMenuMusic::LoadMusic(float &volume)
+void InMenuMusic::loadMusic(float &volume)
 {
 	menuTheme.openFromFile("res/music/InMenuMusic.ogg");
 	menuTheme.setVolume(volume);
 }
 
-void InMenuMusic::PlayMusic(std::string music)
+void InMenuMusic::playMusic(std::string music)
 {
 	if (music == "menu")
 	{
@@ -24,7 +24,7 @@ void InMenuMusic::PlayMusic(std::string music)
 	}
 }
 
-void InMenuMusic::StopMusic(std::string which)
+void InMenuMusic::stopMusic(std::string which)
 {
 	if (which == "menu")
 	{
@@ -33,7 +33,7 @@ void InMenuMusic::StopMusic(std::string which)
 }
 
 
-void InMenuMusic::MenuVolume(float &volume)
+void InMenuMusic::menuVolume(float &volume)
 {
 	menuTheme.setVolume(volume);
 }
@@ -49,19 +49,19 @@ InGameMusic::~InGameMusic()
 
 
 
-void InGameMusic::LoadMusic(float &volume)
+void InGameMusic::loadMusic(float &volume)
 {
 	gameTheme.openFromFile("res/music/InGameMusic.ogg");
 	gameTheme.setVolume(volume);
 }
 
-void InGameMusic::PlayMusic()
+void InGameMusic::playMusic()
 {
 	gameTheme.play();
 	gameTheme.setLoop(true);
 }
 
-void InGameMusic::StopMusic(std::string which)
+void InGameMusic::stopMusic(std::string which)
 {
 	if (which == "game")
 	{
@@ -70,7 +70,7 @@ void InGameMusic::StopMusic(std::string which)
 }
 
 
-void InGameMusic::GameVolume(float &volume)
+void InGameMusic::gameVolume(float &volume)
 {
 	gameTheme.setVolume(volume);
 }
