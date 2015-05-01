@@ -1,0 +1,40 @@
+<!DOCTYPE SpriteDecomposer>
+<sprites image="enemy_1.png" transparentColor="">
+ <animation title="stay" delay="150">
+  <cut w="82" x="8" y="9" h="93" row="1" col="1"/>
+  <cut w="82" x="111" y="10" h="92" row="1" col="1"/>
+  <cut w="82" x="325" y="10" h="92" row="1" col="1"/>
+  <cut w="83" x="216" y="11" h="91" row="1" col="1"/>
+ </animation>
+ <animation title="move" delay="150">
+  <cut w="84" x="120" y="124" h="95" row="1" col="1"/>
+  <cut w="84" x="339" y="124" h="95" row="1" col="1"/>
+  <cut w="82" x="12" y="126" h="93" row="1" col="1"/>
+  <cut w="82" x="230" y="126" h="93" row="1" col="1"/>
+ </animation>
+ <animation title="hit" delay="150">
+  <cut w="82" x="10" y="247" h="96" row="1" col="1"/>
+  <cut w="1" x="91" y="278" h="1" row="1" col="1"/>
+  <cut w="4" x="91" y="283" h="3" row="1" col="1"/>
+  <cut w="3" x="91" y="297" h="3" row="1" col="1"/>
+  <cut w="1" x="98" y="305" h="1" row="1" col="1"/>
+  <cut w="2" x="91" y="321" h="4" row="1" col="1"/>
+ </animation>
+ <animation title="shot" delay="150">
+  <cut w="73" x="15" y="374" h="100" row="1" col="1"/>
+  <cut w="99" x="112" y="383" h="91" row="1" col="1"/>
+  <cut w="90" x="235" y="382" h="92" row="1" col="1"/>
+  <cut w="73" x="348" y="381" h="93" row="1" col="1"/>
+ </animation>
+ <animation title="ex" delay="150">
+  <cut w="94" x="15" y="515" h="105" row="1" col="1"/>
+  <cut w="80" x="144" y="543" h="77" row="1" col="1"/>
+ </animation>
+ <animation title="death" delay="150">
+  <cut w="82" x="8" y="671" h="93" row="1" col="1"/>
+  <cut w="89" x="337" y="685" h="79" row="1" col="1"/>
+  <cut w="89" x="110" y="689" h="75" row="1" col="1"/>
+  <cut w="89" x="224" y="700" h="64" row="1" col="1"/>
+  <cut w="68" x="450" y="705" h="59" row="1" col="1"/>
+ </animation>
+</sprites>
