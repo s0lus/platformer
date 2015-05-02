@@ -1,4 +1,4 @@
-#include "Animation.hpp"
+#include "Animation.h"
 
 Animation::Animation()
 {
@@ -45,13 +45,13 @@ void Animation::tick(float time)
             sprite.setTextureRect(frames[i]);
             if (flip) sprite.setTextureRect(frames_flip[i]);
         }
-
         else
         {
             sprite.setTextureRect(frames[frames.size()-1]);
             if (flip) sprite.setTextureRect(frames_flip[frames_flip.size()-1]);
         }
 }
+
 
 
 //------------------------ Animation Manager -----------------------//
@@ -64,22 +64,6 @@ AnimationManager::~AnimationManager()
 	animList.clear();
 }
 
-void AnimationManager::create(sf::String name, sf::Texture &texture, int x, int y, int w, int h, int count, float speed, int step, bool loop)
-{
-	Animation a;
-	a.speed = speed;
-	a.loop = loop;
-	a.sprite.setTexture(texture);
-	a.sprite.setOrigin(0, h);
-
-	for (int i = 0; i<count; i++)
-	{
-		a.frames.push_back(sf::IntRect(x + i*step, y, w, h));
-		a.frames_flip.push_back(sf::IntRect(x + i*step + w, y, -w, h));
-	}
-	animList[name] = a;
-	currentAnim = name;
-}
 
 void AnimationManager::loadFromXML(std::string fileName, sf::Texture &t)
 {
@@ -163,12 +147,12 @@ bool AnimationManager::isPlaying()
 	return animList[currentAnim].isPlaying;
 }
 
-float AnimationManager::getH()
+float AnimationManager::getHeight()
 {
 	return animList[currentAnim].frames[0].height;
 }
 
-float AnimationManager::getW()
+float AnimationManager::getWidht()
 {
 	return animList[currentAnim].frames[0].width;
 }

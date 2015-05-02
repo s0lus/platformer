@@ -35,6 +35,7 @@ const float walkSpeed = 0.1;
 
 //Скорость подъема персонажа по лестнице
 const float climbUpSpeed = 0.05;
+
 //Скорость спуска персонажа по лестнице
 const float climbDownSpeed = 0.05;
 

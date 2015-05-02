@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Animation/Animation.hpp"
-#include "Level/Level.hpp"
-#include "Entity.hpp"
+#include "Animation/Animation.h"
+#include "Level/Level.h"
+#include "Entity.h"
 
 class Bullet: public Entity
 {

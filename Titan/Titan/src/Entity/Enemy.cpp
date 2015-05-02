@@ -1,10 +1,10 @@
-#include "Enemy.hpp"
+#include "Enemy.h"
 
 
 Enemy::Enemy(AnimationManager &a, Level &lev, int x, int y): Entity(a, x, y)
 {
 	option("Enemy", 0.01, 15, "move");
-    obj = lev.GetObjects("wall");
+    obj = lev.getObjects("wall");
 }
 
 
@@ -21,7 +21,7 @@ void Enemy::update(float time)
 
     dy = 0.5;
     y += dy * time;
-    Collision(1);
+    collision(1);
 
     if (timer>2200)
 	{
@@ -45,7 +45,7 @@ void Enemy::update(float time)
 }
 
 //ѕадение врага на землю
-void Enemy::Collision(int dir)
+void Enemy::collision(int dir)
 {
     for (int i = 0; i<obj.size(); i++)
         if (getRect().intersects(obj[i].rect))

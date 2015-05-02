@@ -52,7 +52,7 @@ int main()
 	float newVolume = NULL;
 
 	MusicSettings musicSettings;
-	musicSettings.readSoundSettings(volume);
+	musicSettings.getSoundSettings(volume);
 
 	InMenuMusic menuMusic;
 	menuMusic.loadMusic(volume);
@@ -79,7 +79,7 @@ int main()
 		// Change volume
 		if (screen != 5)
 		{
-			musicSettings.readSoundSettings(volumeCheck);
+			musicSettings.getSoundSettings(volumeCheck);
 			newVolume = (volume != volumeCheck) ? volumeCheck : volume;
 			menuMusic.menuVolume(newVolume);
 			gameMusic.gameVolume(newVolume);

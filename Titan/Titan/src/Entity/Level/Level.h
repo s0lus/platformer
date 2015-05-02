@@ -11,9 +11,9 @@
 
 struct Object
 {
-    int GetPropertyInt(std::string name);
-	double GetPropertyFloat(std::string name);
-    std::string GetPropertyString(std::string name);
+    int getPropertyInt(std::string name);
+	float getPropertyFloat(std::string name);
+    std::string getPropertyString(std::string name);
 
     std::string name;
     std::string type;
@@ -32,15 +32,19 @@ struct Layer
 class Level
 {
 public:
+	Level();
+	~Level();
 
-    bool LoadFromFile(std::string filename);
-    Object GetObject(std::string name);
-    std::vector<Object> GetObjects(std::string name);
-	std::vector<Object> GetAllObjects();
-    void Draw(sf::RenderWindow &window);
-	sf::Vector2i GetTileSize();
-	float getHeight();
-	float getWidth();
+    bool loadFromFile(std::string filename);
+    void draw(sf::RenderWindow &window);
+
+
+    Object getObject(std::string name);
+    std::vector<Object> getObjects(std::string name);
+	std::vector<Object> getAllObjects() const;
+	sf::Vector2i getTileSize() const;
+	float getHeight() const;
+	float getWidth() const;
 
 
 private:

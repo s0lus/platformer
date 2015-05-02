@@ -1,21 +1,27 @@
-#include "Level.hpp"
+#include "Level.h"
 
-int Object::GetPropertyInt(std::string name)
+Level::Level()
+{}
+
+Level::~Level()
+{}
+
+int Object::getPropertyInt(std::string name)
 {
 	return atoi(properties[name].c_str());
 }
 
-double Object::GetPropertyFloat(std::string name)
+float Object::getPropertyFloat(std::string name)
 {
 	return strtod(properties[name].c_str(), NULL);
 }
 
-std::string Object::GetPropertyString(std::string name)
+std::string Object::getPropertyString(std::string name)
 {
 	return properties[name];
 }
 
-bool Level::LoadFromFile(std::string filename)
+bool Level::loadFromFile(std::string filename)
 {
 	TiXmlDocument levelFile(filename.c_str());
 
@@ -49,7 +55,6 @@ bool Level::LoadFromFile(std::string filename)
 
 	// Пытаемся загрузить тайлсет
 	sf::Image img;
-
 	if (!img.loadFromFile(imagepath))
 	{
 		std::cout << "Failed to load tile sheet." << std::endl;
@@ -57,7 +62,7 @@ bool Level::LoadFromFile(std::string filename)
 	}
 
 
-	img.createMaskFromColor(sf::Color(255, 255, 255));
+	img.createMaskFromColor(sf::Color::White);
 	tilesetImage.loadFromImage(img);
 	tilesetImage.setSmooth(false);
 
@@ -253,7 +258,7 @@ bool Level::LoadFromFile(std::string filename)
 	return true;
 }
 
-Object Level::GetObject(std::string name)
+Object Level::getObject(std::string name)
 {
 	// Только первый объект с заданным именем
 	for (size_t i = 0; i < objects.size(); i++)
@@ -261,7 +266,7 @@ Object Level::GetObject(std::string name)
 			return objects[i];
 }
 
-std::vector<Object> Level::GetObjects(std::string name)
+std::vector<Object> Level::getObjects(std::string name)
 {
 	// Все объекты с заданным именем
 	std::vector<Object> vec;
@@ -273,18 +278,18 @@ std::vector<Object> Level::GetObjects(std::string name)
 }
 
 
-std::vector<Object> Level::GetAllObjects()
+std::vector<Object> Level::getAllObjects() const
 {
 	return objects;
 };
 
 
-sf::Vector2i Level::GetTileSize()
+sf::Vector2i Level::getTileSize() const
 {
 	return sf::Vector2i(tileWidth, tileHeight);
 }
 
-void Level::Draw(sf::RenderWindow &window)
+void Level::draw(sf::RenderWindow &window)
 {
 	// Рисуем все тайлы (объекты НЕ рисуем!)
 	for (size_t layer = 0; layer < layers.size(); layer++)
@@ -292,12 +297,12 @@ void Level::Draw(sf::RenderWindow &window)
 			window.draw(layers[layer].tiles[tile]);
 }
 
-float Level::getHeight()
+float Level::getHeight() const
 {
     return height;
 }
 
-float Level::getWidth()
+float Level::getWidth() const
 {
     return width;
 }

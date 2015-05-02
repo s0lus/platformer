@@ -1,11 +1,11 @@
-#include "Player.hpp"
+#include "Player.h"
 
 Player::Player(AnimationManager &a, Level &lev, int x, int y) :Entity(a, x, y)
 {
 	option("Player", 0, 100, "stay");
 	STATE = stay;
 	hit = 0;
-	obj = lev.GetAllObjects();
+	obj = lev.getAllObjects();
 }
 
 

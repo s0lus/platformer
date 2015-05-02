@@ -5,12 +5,12 @@
 
 #include "Screen.h"
 
-#include <Animation.hpp>
-#include <Level.hpp>
-#include <Entity.hpp>
-#include <Enemy.hpp>
-#include <Player.hpp>
-#include <Bullet.hpp>
+#include <Animation.h>
+#include <Level.h>
+#include <Entity.h>
+#include <Enemy.h>
+#include <Player.h>
+#include <Bullet.h>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>

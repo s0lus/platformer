@@ -95,15 +95,15 @@
     <ClCompile Include="src\Menu\OptionsScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Entity\Animation\Animation.hpp" />
+    <ClInclude Include="src\Entity\Animation\Animation.h" />
     <ClInclude Include="src\Entity\Animation\TinyXML\tinystr.h" />
     <ClInclude Include="src\Entity\Animation\TinyXML\tinyxml.h" />
-    <ClInclude Include="src\Entity\Bullet.hpp" />
+    <ClInclude Include="src\Entity\Bullet.h" />
     <ClInclude Include="src\Entity\Config.h" />
-    <ClInclude Include="src\Entity\Enemy.hpp" />
-    <ClInclude Include="src\Entity\Entity.hpp" />
-    <ClInclude Include="src\Entity\Level\Level.hpp" />
-    <ClInclude Include="src\Entity\Player.hpp" />
+    <ClInclude Include="src\Entity\Enemy.h" />
+    <ClInclude Include="src\Entity\Entity.h" />
+    <ClInclude Include="src\Entity\Level\Level.h" />
+    <ClInclude Include="src\Entity\Player.h" />
     <ClInclude Include="src\Menu\AboutScreen.h" />
     <ClInclude Include="src\Menu\GameScreen.h" />
     <ClInclude Include="src\Menu\GraphicsScreen.h" />

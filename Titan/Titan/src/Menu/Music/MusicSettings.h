@@ -9,6 +9,6 @@ public:
 	MusicSettings();
 	~MusicSettings();
 
-	void readSoundSettings(float &volume);
-	void writeSoundSettings(float &volume);
+	void getSoundSettings(float &volume) const;
+	void setSoundSettings(float &volume);
 };

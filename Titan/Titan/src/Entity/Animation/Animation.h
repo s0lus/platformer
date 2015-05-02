@@ -4,20 +4,27 @@
 
 #include "TinyXML/tinyxml.h"
 
+
+// -------------------------- Animation --------------------------//
+
 class Animation
 {
 public:
 	Animation();
 	~Animation();
 
+	void tick(float time);
+
 	std::vector<sf::IntRect> frames, frames_flip;
 	float currentFrame, speed;
-	bool loop, flip, isPlaying;   // loop показвает зациклена ли анимация. Например анимация взрыва должна проиграться один раз и остановиться, loop=false
+	bool loop;	// loop показвает зациклена ли анимация. Например анимация взрыва должна проиграться один раз и остановиться, loop=false
+	bool flip, isPlaying;
 	sf::Sprite sprite;
 
-	void tick(float time);
 };
 
+
+// -------------------------- Animation Manager --------------------------//
 
 class AnimationManager
 {
@@ -29,10 +36,7 @@ public:
 	sf::String currentAnim;
 	std::map<sf::String, Animation> animList;
 
-   //создание анимаций вручную
-	void create(sf::String name, sf::Texture &texture, int x, int y, int w, int h, int count, float speed, int step = 0, bool loop = true);
-
-	//загрузка из файла XML
+	// Загрузка анимации из файла XML
 	void loadFromXML(std::string fileName, sf::Texture &t);
 
 	void set(sf::String name);
@@ -46,6 +50,6 @@ public:
 	void play(sf::String name);
 	bool isPlaying();
 
-	float getH();
-	float getW();
+	float getHeight();
+	float getWidht();
 };

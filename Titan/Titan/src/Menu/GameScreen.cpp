@@ -20,7 +20,7 @@ int GameScreen::Run(sf::RenderWindow &window)
 	screen = window.getSize();
 
 	Level lvl;
-	lvl.LoadFromFile("res/levels/level_1.tmx");
+	lvl.loadFromFile("res/levels/level_1.tmx");
 
 	sf::Texture hero_sprite;
 	hero_sprite.loadFromFile("res/player/Hero_1.png");
@@ -48,11 +48,11 @@ int GameScreen::Run(sf::RenderWindow &window)
 	std::list<Entity*>  entities;
 	std::list<Entity*>::iterator it;
 
-	std::vector<Object> e = lvl.GetObjects("enemy");
+	std::vector<Object> e = lvl.getObjects("enemy");
 	for (int i = 0; i < e.size(); i++)
 		entities.push_back(new Enemy(anim_e, lvl, e[i].rect.left, e[i].rect.top));
 
-	Object pl = lvl.GetObject("player");
+	Object pl = lvl.getObject("player");
 	Player Hero(anim, lvl, pl.rect.left, pl.rect.top);
 
 	sf::Clock clock;
@@ -201,7 +201,7 @@ int GameScreen::Run(sf::RenderWindow &window)
 
 		window.clear();
 
-		lvl.Draw(window);
+		lvl.draw(window);
 
 		for (it = entities.begin(); it != entities.end(); it++)
 			(*it)->draw(window);

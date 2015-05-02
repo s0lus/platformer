@@ -72,7 +72,7 @@ int MusicScreen::Run(sf::RenderWindow &window)
 	float selection;
 
 	MusicSettings musSet;
-	musSet.readSoundSettings(volume);
+	musSet.getSoundSettings(volume);
 	selection = volume;
 
 	std::stringstream selectionStream;
@@ -116,7 +116,7 @@ int MusicScreen::Run(sf::RenderWindow &window)
 						break;
 
 					case sf::Keyboard::Return:
-							musSet.writeSoundSettings(selection);
+							musSet.setSoundSettings(selection);
 							return (3);
 					default:
 						break;

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Entity.hpp"
+#include "Entity.h"
 
 class Enemy: public Entity
 {
@@ -10,6 +10,5 @@ public:
 
 
 	void update(float time);
-    void Collision(int dir);
+    void collision(int dir);
 };
-
