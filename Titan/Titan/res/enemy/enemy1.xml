@@ -13,4 +13,11 @@
  <animation title="hit" delay="150">
   <cut w="90" x="1902" y="191" h="64" row="1" col="1"/>
  </animation>
+ <animation title="dead" delay="150">
+  <cut w="85" x="1908" y="623" h="65" row="1" col="1"/>
+  <cut w="91" x="1800" y="627" h="61" row="1" col="1"/>
+  <cut w="102" x="1681" y="631" h="57" row="1" col="1"/>
+  <cut w="98" x="1567" y="632" h="55" row="1" col="1"/>
+  <cut w="98" x="1453" y="633" h="54" row="1" col="1"/>
+ </animation>
 </sprites>

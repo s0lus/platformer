@@ -70,16 +70,23 @@ int GameScreen::Run(sf::RenderWindow &window)
 
 	// --------------------- Initialization game objects --------------------- //
 
-	
+
 	// Loading torch
-	sf::Texture torch;
-	torch.loadFromFile("res/objects/torch_and_shadow.png");
+	sf::Texture torchWithShadow;
+	torchWithShadow.loadFromFile("res/objects/torch_and_shadow.png");
 
 	// Loading animation for torch
-	AnimationManager animTorch;
-	animTorch.loadFromXML("res/objects/torch_and_shadow.xml", torch);
-	animTorch.animList["lighting"].loop = 1;
+	AnimationManager animTorchShadow;
+	animTorchShadow.loadFromXML("res/objects/torch_and_shadow.xml", torchWithShadow);
+	animTorchShadow.animList["lighting"].loop = 1;
 
+
+	sf::Texture torch;
+	torch.loadFromFile("res/objects/torch.png");
+
+	AnimationManager animTorch;
+	animTorch.loadFromXML("res/objects/torch.xml", torch);
+	animTorch.animList["lighting"].loop = 1;
 
 	// ------------------------------------------------------------------------ //
 
@@ -95,7 +102,11 @@ int GameScreen::Run(sf::RenderWindow &window)
 	for (int i = 0; i < enemy2_.size(); i++)
 		entities.push_back(new Enemy(animEnemy2, lvl, enemy2_[i].rect.left, enemy2_[i].rect.top));
 
-	std::vector<Object> torch_ = lvl.getObjects("torch_and_shadow");
+	std::vector<Object> torchShadow_ = lvl.getObjects("torch_and_shadow");
+	for (int i = 0; i < torchShadow_.size(); i++)
+		entities.push_back(new Torch(animTorchShadow, lvl, torchShadow_[i].rect.left, torchShadow_[i].rect.top));
+
+	std::vector<Object> torch_ = lvl.getObjects("torch");
 	for (int i = 0; i < torch_.size(); i++)
 		entities.push_back(new Torch(animTorch, lvl, torch_[i].rect.left, torch_[i].rect.top));
 
@@ -188,7 +199,8 @@ int GameScreen::Run(sf::RenderWindow &window)
 			b->update(time);
 			if (b->life == false)
 			{
-				it = entities.erase(it); delete b;
+				it = entities.erase(it); 
+				delete b;
 			}
 			else it++;
 		}

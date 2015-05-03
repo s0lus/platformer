@@ -4072,8 +4072,8 @@
   <object id="97" name="torch_and_shadow" x="2144.62" y="96.25" width="32" height="64"/>
   <object id="98" name="torch_and_shadow" x="2464" y="95.875" width="32" height="64"/>
   <object id="99" name="torch_and_shadow" x="2816.34" y="96.1515" width="32" height="64"/>
-  <object id="100" name="torch_and_shadow" x="96.625" y="352.25" width="32" height="32"/>
-  <object id="101" name="torch_and_shadow" x="192.375" y="352" width="32" height="32"/>
+  <object id="100" name="torch" x="96.625" y="352.25" width="32" height="32"/>
+  <object id="101" name="torch" x="192.375" y="352" width="32" height="32"/>
   <object id="102" name="torch_and_shadow" x="3104.67" y="127" width="32" height="64"/>
   <object id="103" name="torch_and_shadow" x="3008.67" y="127" width="32" height="64"/>
  </objectgroup>
