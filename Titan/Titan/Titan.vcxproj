@@ -84,6 +84,7 @@
     <ClCompile Include="src\Entity\Entity.cpp" />
     <ClCompile Include="src\Entity\Level\Level.cpp" />
     <ClCompile Include="src\Entity\Player.cpp" />
+    <ClCompile Include="src\Entity\Torch.cpp" />
     <ClCompile Include="src\Menu\AboutScreen.cpp" />
     <ClCompile Include="src\Menu\GameScreen.cpp" />
     <ClCompile Include="src\Menu\GraphicsScreen.cpp" />
@@ -104,6 +105,7 @@
     <ClInclude Include="src\Entity\Entity.h" />
     <ClInclude Include="src\Entity\Level\Level.h" />
     <ClInclude Include="src\Entity\Player.h" />
+    <ClInclude Include="src\Entity\Torch.h" />
     <ClInclude Include="src\Menu\AboutScreen.h" />
     <ClInclude Include="src\Menu\GameScreen.h" />
     <ClInclude Include="src\Menu\GraphicsScreen.h" />

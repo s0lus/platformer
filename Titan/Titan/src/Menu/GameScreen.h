@@ -11,6 +11,7 @@
 #include <Enemy.h>
 #include <Player.h>
 #include <Bullet.h>
+#include <Torch.h>
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>

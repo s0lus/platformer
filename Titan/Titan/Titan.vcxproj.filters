@@ -75,6 +75,9 @@
     <ClCompile Include="src\Entity\Animation\TinyXML\tinyxmlparser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Entity\Torch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Menu\AboutScreen.h">
@@ -135,6 +138,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Entity\Bullet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Entity\Torch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
