@@ -1,0 +1,19 @@
+<!DOCTYPE SpriteDecomposer>
+<sprites image="enemy_7.png" transparentColor="">
+ <animation title="move" delay="250">
+  <cut w="174" x="1720" y="174" h="136" row="1" col="1"/>
+  <cut w="171" x="1528" y="170" h="140" row="1" col="1"/>
+  <cut w="174" x="1334" y="173" h="137" row="1" col="1"/>
+  <cut w="171" x="1143" y="170" h="140" row="1" col="1"/>
+ </animation>
+ <animation title="hit" delay="150">
+  <cut w="188" x="1708" y="334" h="156" row="1" col="1"/>
+ </animation>
+ <animation title="dead" delay="150">
+  <cut w="188" x="1706" y="1390" h="150" row="1" col="1"/>
+  <cut w="174" x="1511" y="1392" h="148" row="1" col="1"/>
+  <cut w="175" x="1308" y="1393" h="147" row="1" col="1"/>
+  <cut w="177" x="1106" y="1395" h="145" row="1" col="1"/>
+  <cut w="181" x="901" y="1397" h="143" row="1" col="1"/>
+ </animation>
+</sprites>

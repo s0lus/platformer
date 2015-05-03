@@ -1,0 +1,8 @@
+<!DOCTYPE SpriteDecomposer>
+<sprites image="torch_and_shadow.png" transparentColor="FFFFFF">
+ <animation title="lighting" delay="190">
+  <cut w="32" x="0" y="0" h="64" row="1" col="1"/>
+  <cut w="32" x="35" y="-0.25" h="64" row="1" col="1"/>
+  <cut w="32" x="70" y="0" h="64" row="1" col="1"/>
+ </animation>
+</sprites>
