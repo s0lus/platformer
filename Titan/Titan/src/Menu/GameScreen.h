@@ -25,4 +25,8 @@ public:
 
 	int Run(sf::RenderWindow &window);
 
+	float getFPS(const sf::Time &time)
+	{
+		return (1000000.0f / time.asMicroseconds());
+	}
 };

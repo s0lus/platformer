@@ -114,10 +114,11 @@ int GameScreen::Run(sf::RenderWindow &window)
 	Player Hero(animCharacter, lvl, pl.rect.left, pl.rect.top);
 
 
-	//ѕеременна€, может ли сделать еще выстрел персонаж
+	// ѕеременна€, может ли сделать еще выстрел персонаж
 	bool CanShoot = true;
 
 	sf::Clock clock;
+	sf::Clock fpsClock;
 	while (window.isOpen())
 	{
 		float time = clock.getElapsedTime().asMicroseconds();
@@ -251,6 +252,7 @@ int GameScreen::Run(sf::RenderWindow &window)
 
 			}
 
+		std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
 
 		view.setCenter(Hero.x, Hero.y);
 
