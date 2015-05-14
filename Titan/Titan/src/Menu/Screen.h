@@ -9,6 +9,16 @@
 class Screen
 {
 public:
+	Screen()
+	{
+
+	};
+
+	~Screen()
+	{
+
+	};
+
 	virtual int Run(sf::RenderWindow &window) = 0;
 
 };

@@ -119,6 +119,12 @@ int GameScreen::Run(sf::RenderWindow &window)
 
 	sf::Clock clock;
 	sf::Clock fpsClock;
+
+	if (!arrowShoot.openFromFile("res/music/arrow.ogg"))
+	{
+		std::cerr << "Error: ARROW.OGG" << std::endl;
+	}
+
 	while (window.isOpen())
 	{
 		float time = clock.getElapsedTime().asMicroseconds();
@@ -147,6 +153,8 @@ int GameScreen::Run(sf::RenderWindow &window)
 				{
 					if ((event.key.code == sf::Keyboard::Space) && CanShoot)
 					{
+						arrowShoot.play();
+
 						if (!Hero.dir)
 							entities.push_back(new Bullet(bulletCharacter, lvl, Hero.x + 18, Hero.y + 16, Hero.dir));
 						else
@@ -200,7 +208,7 @@ int GameScreen::Run(sf::RenderWindow &window)
 			b->update(time);
 			if (b->life == false)
 			{
-				it = entities.erase(it); 
+				it = entities.erase(it);
 				delete b;
 			}
 			else it++;
@@ -212,6 +220,7 @@ int GameScreen::Run(sf::RenderWindow &window)
 		//Обрабатываем взаимодействие сущностей друг с другом
 		//Только если здоровье персонажа больше 0
 		if (Hero.Health > 0)
+		{
 			for (it = entities.begin(); it != entities.end(); it++)
 			{
 				//1. враги
@@ -251,14 +260,15 @@ int GameScreen::Run(sf::RenderWindow &window)
 				}
 
 			}
-
-		std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
+		}
 
 		view.setCenter(Hero.x, Hero.y);
 
 		window.setView(view);
 
 		window.clear();
+
+		//std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
 
 		lvl.draw(window);
 

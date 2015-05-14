@@ -17,7 +17,7 @@
 #include <SFML/Audio.hpp>
 
 
-class GameScreen: public Screen
+class GameScreen : public Screen
 {
 public:
 	GameScreen();
@@ -25,8 +25,12 @@ public:
 
 	int Run(sf::RenderWindow &window);
 
-	float getFPS(const sf::Time &time)
+	float getFPS(const sf::Time &time) const
 	{
 		return (1000000.0f / time.asMicroseconds());
 	}
+
+private:
+	sf::Music arrowShoot;
+
 };
