@@ -6,4 +6,5 @@
 #include "AboutScreen.h"
 #include "OptionsScreen.h"
 #include "GraphicsScreen.h"
+#include "GameOverScreen.h"
 #include "MusicScreen.h"

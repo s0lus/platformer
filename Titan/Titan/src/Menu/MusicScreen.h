@@ -14,5 +14,5 @@ public:
 	MusicScreen();
 	~MusicScreen();
 
-	int Run(sf::RenderWindow &window);
+	int run(sf::RenderWindow &window);
 };

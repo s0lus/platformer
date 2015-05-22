@@ -9,7 +9,7 @@ OptionsScreen::~OptionsScreen()
 {}
 
 
-int OptionsScreen::Run(sf::RenderWindow &window)
+int OptionsScreen::run(sf::RenderWindow &window)
 {
 	sf::Event event;
 	sf::Texture texture;
@@ -23,7 +23,7 @@ int OptionsScreen::Run(sf::RenderWindow &window)
 
 	int menu = 0;
 
-	if (!texture.loadFromFile("res/img/background_1280x1024.png"))
+	if (!texture.loadFromFile("res/img/background_1024x768.png"))
 	{
 		std::cerr << "Error loading fon" << std::endl;
 		return (-1);

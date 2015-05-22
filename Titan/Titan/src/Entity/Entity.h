@@ -15,7 +15,7 @@ class Entity
 {
 public:
 	Entity(AnimationManager &A, int X, int Y);
-	~Entity();
+	virtual ~Entity();
 
     // Обновить состояние сущности (поведение сущности)
     // Поведение каждого потомка должно быть реализовано отдельно

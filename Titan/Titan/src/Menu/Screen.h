@@ -3,22 +3,23 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-#define screenWidth 1280
-#define screenHeight 1024
+#define screenWidth 1024
+#define screenHeight 768
 
 class Screen
 {
+
 public:
 	Screen()
 	{
 
 	};
 
-	~Screen()
+	virtual ~Screen()
 	{
 
 	};
 
-	virtual int Run(sf::RenderWindow &window) = 0;
+	virtual int run(sf::RenderWindow &window) = 0;
 
 };

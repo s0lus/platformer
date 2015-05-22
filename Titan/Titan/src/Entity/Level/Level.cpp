@@ -299,10 +299,10 @@ void Level::draw(sf::RenderWindow &window)
 
 float Level::getHeight() const
 {
-    return height;
+	return height;
 }
 
 float Level::getWidth() const
 {
-    return width;
+	return width;
 }

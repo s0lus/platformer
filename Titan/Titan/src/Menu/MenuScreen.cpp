@@ -9,7 +9,7 @@ MenuScreen::~MenuScreen()
 {}
 
 
-int MenuScreen::Run(sf::RenderWindow &window)
+int MenuScreen::run(sf::RenderWindow &window)
 {
 	sf::Event event;
 	sf::Texture texture;
@@ -19,7 +19,7 @@ int MenuScreen::Run(sf::RenderWindow &window)
 
 	bool running = true;
 
-	if (!texture.loadFromFile("res/img/background_1280x1024.png"))
+	if (!texture.loadFromFile("res/img/background_1024x768.png"))
 	{
 		std::cerr << "Error loading fon" << std::endl;
 		return (-1);

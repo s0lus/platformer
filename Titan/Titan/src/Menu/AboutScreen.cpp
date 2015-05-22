@@ -8,10 +8,10 @@ AboutScreen::AboutScreen()
 AboutScreen::~AboutScreen()
 {}
 
-int AboutScreen::Run(sf::RenderWindow &window)
+int AboutScreen::run(sf::RenderWindow &window)
 {
 	sf::Texture texture;
-	if (!texture.loadFromFile("res/img/background_1280x1024.png"))
+	if (!texture.loadFromFile("res/img/background_1024x768.png"))
 	{
 		std::cerr << "Error loading fon" << std::endl;
 		return (-1);

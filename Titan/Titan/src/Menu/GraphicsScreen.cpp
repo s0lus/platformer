@@ -9,12 +9,13 @@ GraphicsScreen::GraphicsScreen()
 GraphicsScreen::~GraphicsScreen()
 {}
 
-int GraphicsScreen::Run(sf::RenderWindow &window)
+
+int GraphicsScreen::run(sf::RenderWindow &window)
 {
 	sf::Event event;
 
 	sf::Texture texture;
-	if (!texture.loadFromFile("res/img/setScrMode_1280x1024.png"))
+	if (!texture.loadFromFile("res/img/setScrMode_1024x768.png"))
 	{
 		std::cerr << "Error loading fon" << std::endl;
 		return (-1);

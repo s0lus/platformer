@@ -78,6 +78,9 @@
     <ClCompile Include="src\Entity\Torch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Menu\GameOverScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Menu\AboutScreen.h">
@@ -141,6 +144,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Entity\Torch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu\GameOverScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

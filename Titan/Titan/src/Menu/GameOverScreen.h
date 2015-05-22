@@ -1,16 +1,19 @@
 #pragma once
 
-#include "Screen.h"
-
 #include <iostream>
+
+#include "Screen.h"
 
 #include <SFML/Graphics.hpp>
 
-class GraphicsScreen: public Screen
+class GameOverScreen : public Screen
 {
+
 public:
-	GraphicsScreen();
-	~GraphicsScreen();
+	GameOverScreen();
+	~GameOverScreen();
 
 	int run(sf::RenderWindow &window);
+
 };
+

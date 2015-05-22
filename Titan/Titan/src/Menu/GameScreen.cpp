@@ -8,7 +8,7 @@ GameScreen::GameScreen()
 GameScreen::~GameScreen()
 {}
 
-int GameScreen::Run(sf::RenderWindow &window)
+int GameScreen::run(sf::RenderWindow &window)
 {
 	sf::View view(window.getView());
 	view.zoom(0.50);
@@ -124,6 +124,7 @@ int GameScreen::Run(sf::RenderWindow &window)
 	{
 		std::cerr << "Error: ARROW.OGG" << std::endl;
 	}
+	arrowShoot.setVolume(100);
 
 	while (window.isOpen())
 	{
@@ -235,8 +236,15 @@ int GameScreen::Run(sf::RenderWindow &window)
 					{
 						if (!Hero.hit)
 						{
-							Hero.Health -= 5;
+							Hero.Health -= 50;
+							std::cout << Hero.Health << std::endl;
 							Hero.hit = true;
+
+							// GAME OVER
+							if (Hero.Health <= 0)
+							{
+								return 6;
+							}
 
 							if (Hero.dir)
 								Hero.x += 10;

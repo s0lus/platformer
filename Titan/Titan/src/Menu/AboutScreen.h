@@ -12,5 +12,5 @@ public:
 	AboutScreen();
 	~AboutScreen();
 
-	int Run(sf::RenderWindow &window);
+	int run(sf::RenderWindow &window);
 };

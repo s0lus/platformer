@@ -15,6 +15,7 @@ int main()
 	ScreenSettings scrSet;
 	sf::RenderWindow window;
 
+
 	if (scrSet.getScreenSettigns())
 	{
 		window.create(sf::VideoMode::getDesktopMode(), "", sf::Style::Fullscreen);
@@ -44,6 +45,9 @@ int main()
 
 	MusicScreen musScr;
 	Screens.push_back(&musScr);
+
+	GameOverScreen gameOverScr;
+	Screens.push_back(&gameOverScr);
 
 
 	// Music settings
@@ -86,11 +90,11 @@ int main()
 		}
 
 		// Main loop for screens
-		screen = Screens[screen]->Run(window);
+		screen = Screens[screen]->run(window);
 		std::cout << "Returned value: " << screen << std::endl;
 	}
 
-	//system("PAUSE");
+	system("PAUSE");
 
 	return 0;
 }

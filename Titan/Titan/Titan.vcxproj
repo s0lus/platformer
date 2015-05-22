@@ -86,6 +86,7 @@
     <ClCompile Include="src\Entity\Player.cpp" />
     <ClCompile Include="src\Entity\Torch.cpp" />
     <ClCompile Include="src\Menu\AboutScreen.cpp" />
+    <ClCompile Include="src\Menu\GameOverScreen.cpp" />
     <ClCompile Include="src\Menu\GameScreen.cpp" />
     <ClCompile Include="src\Menu\GraphicsScreen.cpp" />
     <ClCompile Include="src\Menu\Graphics\ScreenSettings.cpp" />
@@ -107,6 +108,7 @@
     <ClInclude Include="src\Entity\Player.h" />
     <ClInclude Include="src\Entity\Torch.h" />
     <ClInclude Include="src\Menu\AboutScreen.h" />
+    <ClInclude Include="src\Menu\GameOverScreen.h" />
     <ClInclude Include="src\Menu\GameScreen.h" />
     <ClInclude Include="src\Menu\GraphicsScreen.h" />
     <ClInclude Include="src\Menu\Graphics\ScreenSettings.h" />
