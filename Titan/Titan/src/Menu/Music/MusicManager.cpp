@@ -9,9 +9,9 @@ InMenuMusic::~InMenuMusic()
 {}
 
 
-void InMenuMusic::loadMusic(float &volume)
+void InMenuMusic::loadMusic(float &volume, std::string path)
 {
-	menuTheme.openFromFile("res/music/InMenuMusic.ogg");
+	menuTheme.openFromFile(path);
 	menuTheme.setVolume(volume);
 }
 
@@ -49,9 +49,9 @@ InGameMusic::~InGameMusic()
 
 
 
-void InGameMusic::loadMusic(float &volume)
+void InGameMusic::loadMusic(float &volume, std::string path)
 {
-	gameTheme.openFromFile("res/music/InGameMusic.ogg");
+	gameTheme.openFromFile(path);
 	gameTheme.setVolume(volume);
 }
 
@@ -59,6 +59,12 @@ void InGameMusic::playMusic()
 {
 	gameTheme.play();
 	gameTheme.setLoop(true);
+}
+
+void InGameMusic::playMusic(bool loop)
+{
+	gameTheme.play();
+	gameTheme.setLoop(loop);
 }
 
 void InGameMusic::stopMusic(std::string which)

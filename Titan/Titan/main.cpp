@@ -15,7 +15,6 @@ int main()
 	ScreenSettings scrSet;
 	sf::RenderWindow window;
 
-
 	if (scrSet.getScreenSettigns())
 	{
 		window.create(sf::VideoMode::getDesktopMode(), "", sf::Style::Fullscreen);
@@ -59,11 +58,11 @@ int main()
 	musicSettings.getSoundSettings(volume);
 
 	InMenuMusic menuMusic;
-	menuMusic.loadMusic(volume);
+	menuMusic.loadMusic(volume, "res/music/InMenuMusic.ogg");
 	menuMusic.playMusic("menu");
 
 	InGameMusic gameMusic;
-	gameMusic.loadMusic(volume);
+	gameMusic.loadMusic(volume, "res/music/InGameMusic.ogg");
 
 	while (screen >= 0)
 	{
@@ -94,7 +93,7 @@ int main()
 		std::cout << "Returned value: " << screen << std::endl;
 	}
 
-	system("PAUSE");
+	//system("PAUSE");
 
 	return 0;
 }

@@ -11,32 +11,63 @@ OptionsScreen::~OptionsScreen()
 
 int OptionsScreen::run(sf::RenderWindow &window)
 {
-	sf::Event event;
+
+	sf::VideoMode mode = sf::VideoMode::getDesktopMode();
+
 	sf::Texture texture;
 	sf::Sprite sprite;
 
-	sf::Font font;
+	isFullScreen = scrSet.getScreenSettigns();
 
-	sf::Music keyPressedSound;
-
-	bool running = true;
-
-	int menu = 0;
-
-	if (!texture.loadFromFile("res/img/background_1024x768.png"))
+	if (isFullScreen)
 	{
-		std::cerr << "Error loading fon" << std::endl;
-		return (-1);
+		if (mode.width == 1680 && mode.height == 1050)
+		{
+			if (!texture.loadFromFile("res/img/background_1680x1050.png"))
+			{
+				std::cerr << "Error: can`t loading image - background_1680x1050.png" << std::endl;
+				return (-1);
+			}
+			sprite.setTexture(texture);
+		}
+		else if (mode.width == 1280 && mode.height == 1024)
+		{
+			if (!texture.loadFromFile("res/img/background_1280x1204.png"))
+			{
+				std::cerr << "Error: can`t loading image - background_1280x1204.png" << std::endl;
+				return (-1);
+			}
+			sprite.setTexture(texture);
+		}
+		else if (mode.width == 1366 && mode.height == 768)
+		{
+			if (!texture.loadFromFile("res/img/background_1366x768.png"))
+			{
+				std::cerr << "Error: can`t loading image - background_1366x768.png" << std::endl;
+				return (-1);
+			}
+			sprite.setTexture(texture);
+		}
+	}
+	else
+	{
+		if (!texture.loadFromFile("res/img/background_1024x768.png"))
+		{
+			std::cerr << "Error: can`t loading image - background_1024x768.png" << std::endl;
+			return (-1);
+		}
+		sprite.setTexture(texture);
 	}
 
-	sprite.setTexture(texture);
 
+	sf::Font font;
 	if (!font.loadFromFile("res/font/menuFont.ttf"))
 	{
 		std::cerr << "Error loading font" << std::endl;
 		return (-1);
 	}
 
+	sf::Music keyPressedSound;
 	if (!keyPressedSound.openFromFile("res/music/keyPressed.ogg"))
 	{
 		std::cerr << "Error loading music" << std::endl;
@@ -59,6 +90,11 @@ int OptionsScreen::run(sf::RenderWindow &window)
 	music.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
 	music.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f + 50));
 
+
+	sf::Event event;
+	bool running = true;
+	int menu = 0;
+
 	while (running)
 	{
 		while (window.pollEvent(event))
@@ -73,37 +109,37 @@ int OptionsScreen::run(sf::RenderWindow &window)
 				switch (event.key.code)
 				{
 					case sf::Keyboard::Escape:
-						return 0;
-						break;
+					return 0;
+					break;
 
 					case sf::Keyboard::Down:
-						keyPressedSound.play();
-						keyPressedSound.setVolume(50);
-						menu++; 
-						break;
+					keyPressedSound.play();
+					keyPressedSound.setVolume(50);
+					menu++;
+					break;
 
 					case sf::Keyboard::Up:
-						keyPressedSound.play();
-						keyPressedSound.setVolume(50);
-						menu--;
-						break;
+					keyPressedSound.play();
+					keyPressedSound.setVolume(50);
+					menu--;
+					break;
 
 					case sf::Keyboard::Return:
-						// Graphics settings screen
-						if (menu == 0)
-						{
-							return (4);
-						}
+					// Graphics settings screen
+					if (menu == 0)
+					{
+						return (4);
+					}
 
-						// Music settings screen
-						if (menu == 1)
-						{
-							return (5);
-						}
-						break;
+					// Music settings screen
+					if (menu == 1)
+					{
+						return (5);
+					}
+					break;
 
 					default:
-						break;
+					break;
 				}
 			}
 		}

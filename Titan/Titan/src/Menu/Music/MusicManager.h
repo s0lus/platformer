@@ -14,7 +14,7 @@ public:
 	InMenuMusic();
 	~InMenuMusic();
 
-	void loadMusic(float &volume);
+	void loadMusic(float &volume, std::string path);
 	void playMusic(std::string music);
 	void stopMusic(std::string which);
 
@@ -33,8 +33,9 @@ public:
 	InGameMusic();
 	~InGameMusic();
 
-	void loadMusic(float &volume);
+	void loadMusic(float &volume, std::string path);
 	void playMusic();
+	void playMusic(bool loop);
 	void stopMusic(std::string which);
 
 	void gameVolume(float &volume);

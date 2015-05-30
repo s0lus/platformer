@@ -8,6 +8,7 @@ GameOverScreen::GameOverScreen()
 GameOverScreen::~GameOverScreen()
 {}
 
+class GameScreen;
 
 int GameOverScreen::run(sf::RenderWindow &window)
 {
@@ -37,6 +38,7 @@ int GameOverScreen::run(sf::RenderWindow &window)
 	textRect = gameOverText.getLocalBounds();
 	gameOverText.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
 	gameOverText.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f));
+
 
 
 	bool running = true;

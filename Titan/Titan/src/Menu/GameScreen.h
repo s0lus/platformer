@@ -4,6 +4,9 @@
 #include <list>
 
 #include "Screen.h"
+#include "Music/MusicManager.h"
+#include "Music/MusicSettings.h"
+
 
 #include <Animation.h>
 #include <Level.h>
@@ -22,6 +25,7 @@ class GameScreen : public Screen
 
 private:
 	sf::Music arrowShoot;
+
 
 public:
 	GameScreen();

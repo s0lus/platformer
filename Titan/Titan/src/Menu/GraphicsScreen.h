@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Screen.h"
+#include "Graphics/ScreenSettings.h"
 
 #include <iostream>
 
@@ -8,6 +9,11 @@
 
 class GraphicsScreen: public Screen
 {
+
+private:
+	ScreenSettings scrSet;
+	bool isFullScreen;
+
 public:
 	GraphicsScreen();
 	~GraphicsScreen();

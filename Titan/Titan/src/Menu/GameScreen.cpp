@@ -13,7 +13,6 @@ int GameScreen::run(sf::RenderWindow &window)
 	sf::View view(window.getView());
 	view.zoom(0.50);
 
-
 	// Loading level
 	Level lvl;
 	lvl.loadFromFile("res/levels/level_1.tmx");
@@ -120,11 +119,13 @@ int GameScreen::run(sf::RenderWindow &window)
 	sf::Clock clock;
 	sf::Clock fpsClock;
 
-	if (!arrowShoot.openFromFile("res/music/arrow.ogg"))
-	{
-		std::cerr << "Error: ARROW.OGG" << std::endl;
-	}
-	arrowShoot.setVolume(100);
+
+	float volume;
+	MusicSettings musSet;
+	musSet.getSoundSettings(volume);
+
+	InGameMusic arrowShoot;
+	arrowShoot.loadMusic(volume, "res/music/arrow.ogg");
 
 	while (window.isOpen())
 	{
@@ -154,7 +155,7 @@ int GameScreen::run(sf::RenderWindow &window)
 				{
 					if ((event.key.code == sf::Keyboard::Space) && CanShoot)
 					{
-						arrowShoot.play();
+						arrowShoot.playMusic(false);
 
 						if (!Hero.dir)
 							entities.push_back(new Bullet(bulletCharacter, lvl, Hero.x + 18, Hero.y + 16, Hero.dir));
@@ -229,7 +230,8 @@ int GameScreen::run(sf::RenderWindow &window)
 				{
 					Entity *enemy = *it;
 
-					if (enemy->Health <= 0) continue;
+					if (enemy->Health <= 0)
+						continue;
 
 					//Если персонаж наткнулся на врага
 					if (Hero.getRect().intersects(enemy->getRect()))
@@ -266,7 +268,6 @@ int GameScreen::run(sf::RenderWindow &window)
 								}
 					}
 				}
-
 			}
 		}
 
@@ -276,7 +277,7 @@ int GameScreen::run(sf::RenderWindow &window)
 
 		window.clear();
 
-		//std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
+		std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
 
 		lvl.draw(window);
 

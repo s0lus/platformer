@@ -1,5 +1,4 @@
 #include "GraphicsScreen.h"
-#include "Graphics/ScreenSettings.h"
 
 
 GraphicsScreen::GraphicsScreen()
@@ -12,17 +11,53 @@ GraphicsScreen::~GraphicsScreen()
 
 int GraphicsScreen::run(sf::RenderWindow &window)
 {
-	sf::Event event;
+	sf::VideoMode mode = sf::VideoMode::getDesktopMode();
 
 	sf::Texture texture;
-	if (!texture.loadFromFile("res/img/setScrMode_1024x768.png"))
+	sf::Sprite sprite;
+
+	isFullScreen = scrSet.getScreenSettigns();
+
+	if (isFullScreen)
 	{
-		std::cerr << "Error loading fon" << std::endl;
-		return (-1);
+		if (mode.width == 1680 && mode.height == 1050)
+		{
+			if (!texture.loadFromFile("res/img/setScrMode_1680x1050.png"))
+			{
+				std::cerr << "Error: can`t loading image - setScrMode_1680x1050.png" << std::endl;
+				return (-1);
+			}
+			sprite.setTexture(texture);
+		}
+		else if (mode.width == 1280 && mode.height == 1024)
+		{
+			if (!texture.loadFromFile("res/img/setScrMode_1280x1024.png"))
+			{
+				std::cerr << "Error: can`t loading image - setScrMode_1280x1024.png" << std::endl;
+				return (-1);
+			}
+			sprite.setTexture(texture);
+		}
+		else if (mode.width == 1366 && mode.height == 768)
+		{
+			if (!texture.loadFromFile("res/img/setScrMode_1366x768.png"))
+			{
+				std::cerr << "Error: can`t loading image - setScrMode_1366x768.png" << std::endl;
+				return (-1);
+			}
+			sprite.setTexture(texture);
+		}
+	}
+	else
+	{
+		if (!texture.loadFromFile("res/img/setScrMode_1024x768.png"))
+		{
+			std::cerr << "Error: can`t loading image - setScrMode_1024x768.png" << std::endl;
+			return (-1);
+		}
+		sprite.setTexture(texture);
 	}
 
-	sf::Sprite sprite;
-	sprite.setTexture(texture);
 
 	sf::Font font;
 	if (!font.loadFromFile("res/font/menuFont.ttf"))
@@ -79,8 +114,7 @@ int GraphicsScreen::run(sf::RenderWindow &window)
 	help.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f + 250));
 
 
-	ScreenSettings scrSet;
-
+	sf::Event event;
 	bool running = true;
 	int menu = 0;
 
@@ -119,12 +153,16 @@ int GraphicsScreen::run(sf::RenderWindow &window)
 							okSound.play();
 							okSound.setVolume(75);
 							scrSet.setScreenSettings(true);
+							// restart game for change resolution
+							return (-1);
 						}
 						else
 						{
 							okSound.play();
 							okSound.setVolume(75);
 							scrSet.setScreenSettings(false);
+							// restart game for change resolution
+							return (-1);
 						}
 						break;
 
