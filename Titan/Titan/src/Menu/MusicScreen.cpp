@@ -132,32 +132,31 @@ int MusicScreen::run(sf::RenderWindow &window)
 				switch (event.key.code)
 				{
 					case sf::Keyboard::Escape:
-						return (3);
-						break;
+					return (2);
+					break;
 
 					case sf::Keyboard::Right:
-						if (selection < 100)
-						{
-							selection += 5;
-						}
-						else
-						{
-							selection = 100;
-						}
-						break;
+					if (selection < 100)
+					{
+						selection += 5;
+					}
+					else
+					{
+						selection = 100;
+					}
+					break;
 
 					case sf::Keyboard::Left:
-						if (selection > 0)
-						{
-							selection -= 5;
-						}
-						break;
+					if (selection > 0)
+					{
+						selection -= 5;
+					}
+					break;
 
 					case sf::Keyboard::Return:
-							musSet.setSoundSettings(selection);
-							return (3);
-					default:
-						break;
+					musSet.setSoundSettings(selection);
+					return (2);
+					break;
 				}
 			}
 		}

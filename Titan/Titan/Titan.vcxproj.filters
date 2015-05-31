@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Menu\AboutScreen.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Menu\GameScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -83,9 +80,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Menu\AboutScreen.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Menu\GameScreen.h">
       <Filter>Header Files</Filter>
     </ClInclude>

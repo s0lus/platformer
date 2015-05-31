@@ -107,8 +107,8 @@ int GraphicsScreen::run(sf::RenderWindow &window)
 	sf::Text help;
 
 	help.setFont(font);
-	help.setString("You must restart the game to change resolution");
-	help.setColor(sf::Color::White);
+	help.setString("You must restart the game");
+	help.setColor(sf::Color::Black);
 	textRect = help.getLocalBounds();
 	help.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
 	help.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f + 250));
@@ -132,42 +132,42 @@ int GraphicsScreen::run(sf::RenderWindow &window)
 				switch (event.key.code)
 				{
 					case sf::Keyboard::Escape:
-						return (3);
-						break;
+					return (2);
+					break;
 
 					case sf::Keyboard::Right:
-						keyPressedSound.play();
-						keyPressedSound.setVolume(50);
-						menu++;
-						break;
+					keyPressedSound.play();
+					keyPressedSound.setVolume(50);
+					menu++;
+					break;
 
 					case sf::Keyboard::Left:
-						keyPressedSound.play();
-						keyPressedSound.setVolume(50);
-						menu--;
-						break;
+					keyPressedSound.play();
+					keyPressedSound.setVolume(50);
+					menu--;
+					break;
 
 					case sf::Keyboard::Return:
-						if (menu == 0)
-						{	
-							okSound.play();
-							okSound.setVolume(75);
-							scrSet.setScreenSettings(true);
-							// restart game for change resolution
-							return (-1);
-						}
-						else
-						{
-							okSound.play();
-							okSound.setVolume(75);
-							scrSet.setScreenSettings(false);
-							// restart game for change resolution
-							return (-1);
-						}
-						break;
+					if (menu == 0)
+					{
+						okSound.play();
+						okSound.setVolume(75);
+						scrSet.setScreenSettings(true);
+						// restart game for change resolution
+						return (-1);
+					}
+					else
+					{
+						okSound.play();
+						okSound.setVolume(75);
+						scrSet.setScreenSettings(false);
+						// restart game for change resolution
+						return (-1);
+					}
+					break;
 
 					default:
-						break;
+					break;
 				}
 			}
 		}

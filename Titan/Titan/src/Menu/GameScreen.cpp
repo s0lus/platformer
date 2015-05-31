@@ -245,7 +245,7 @@ int GameScreen::run(sf::RenderWindow &window)
 							// GAME OVER
 							if (Hero.Health <= 0)
 							{
-								return 6;
+								return 5;
 							}
 
 							if (Hero.dir)

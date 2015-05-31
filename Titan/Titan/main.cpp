@@ -21,7 +21,7 @@ int main()
 	}
 	else
 	{
-		window.create(sf::VideoMode(screenWidth, screenHeight), "Titan", sf::Style::Default);
+		window.create(sf::VideoMode(screenWidth, screenHeight), "Forge of the gods", sf::Style::Default);
 	}
 
 	std::vector<Screen*> Screens;
@@ -32,9 +32,6 @@ int main()
 
 	GameScreen gameScr;
 	Screens.push_back(&gameScr);
-
-	AboutScreen aboutScr;
-	Screens.push_back(&aboutScr);
 
 	OptionsScreen optScr;
 	Screens.push_back(&optScr);
@@ -80,7 +77,7 @@ int main()
 		}
 
 		// Change volume
-		if (screen != 5)
+		if (screen != 4)
 		{
 			musicSettings.getSoundSettings(volumeCheck);
 			newVolume = (volume != volumeCheck) ? volumeCheck : volume;

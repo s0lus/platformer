@@ -76,6 +76,7 @@ int MenuScreen::run(sf::RenderWindow &window)
 		return (-1);
 	}
 
+
 	sf::FloatRect textRect;
 	sf::Text startGame;
 	sf::Text optionsGame;
@@ -85,6 +86,7 @@ int MenuScreen::run(sf::RenderWindow &window)
 	startGame.setFont(font);
 	startGame.setString("Start Game");
 	textRect = startGame.getLocalBounds();
+	std::cout << textRect.left;
 	startGame.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
 	startGame.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f - 50));
 
@@ -94,17 +96,11 @@ int MenuScreen::run(sf::RenderWindow &window)
 	optionsGame.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
 	optionsGame.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f));
 
-	aboutGame.setFont(font);
-	aboutGame.setString("About Game");
-	textRect = aboutGame.getLocalBounds();
-	aboutGame.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
-	aboutGame.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f + 50));
-
 	exitGame.setFont(font);
 	exitGame.setString("Exit");
 	textRect = exitGame.getLocalBounds();
 	exitGame.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
-	exitGame.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f + 100));
+	exitGame.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f + 50));
 
 
 	sf::Event event;
@@ -146,17 +142,11 @@ int MenuScreen::run(sf::RenderWindow &window)
 					// Option Screen
 					if (menu == 1)
 					{
-						return (3);
-					}
-
-					// About Screen
-					if (menu == 2)
-					{
 						return (2);
 					}
 
 					// Exit
-					if (menu == 3)
+					if (menu == 2)
 					{
 						return (-1);
 					}
@@ -171,8 +161,8 @@ int MenuScreen::run(sf::RenderWindow &window)
 		if (menu < 0)
 			menu = 0;
 
-		if (menu > 3)
-			menu = 3;
+		if (menu > 2)
+			menu = 2;
 
 		//std::cout << "menu:" << menu << std::endl;
 
@@ -180,7 +170,6 @@ int MenuScreen::run(sf::RenderWindow &window)
 		{
 			startGame.setColor(sf::Color::Red);
 			optionsGame.setColor(sf::Color::White);
-			aboutGame.setColor(sf::Color::White);
 			exitGame.setColor(sf::Color::White);
 		}
 
@@ -188,7 +177,6 @@ int MenuScreen::run(sf::RenderWindow &window)
 		{
 			startGame.setColor(sf::Color::White);
 			optionsGame.setColor(sf::Color::Red);
-			aboutGame.setColor(sf::Color::White);
 			exitGame.setColor(sf::Color::White);
 		}
 
@@ -196,15 +184,6 @@ int MenuScreen::run(sf::RenderWindow &window)
 		{
 			startGame.setColor(sf::Color::White);
 			optionsGame.setColor(sf::Color::White);
-			aboutGame.setColor(sf::Color::Red);
-			exitGame.setColor(sf::Color::White);
-		}
-
-		if (menu == 3)
-		{
-			startGame.setColor(sf::Color::White);
-			optionsGame.setColor(sf::Color::White);
-			aboutGame.setColor(sf::Color::White);
 			exitGame.setColor(sf::Color::Red);
 		}
 
@@ -216,7 +195,6 @@ int MenuScreen::run(sf::RenderWindow &window)
 
 		window.draw(startGame);
 		window.draw(optionsGame);
-		window.draw(aboutGame);
 		window.draw(exitGame);
 
 		window.display();

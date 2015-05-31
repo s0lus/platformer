@@ -128,13 +128,13 @@ int OptionsScreen::run(sf::RenderWindow &window)
 					// Graphics settings screen
 					if (menu == 0)
 					{
-						return (4);
+						return (3);
 					}
 
 					// Music settings screen
 					if (menu == 1)
 					{
-						return (5);
+						return (4);
 					}
 					break;
 
