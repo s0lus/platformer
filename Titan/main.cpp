@@ -1,13 +1,11 @@
 #include <SFML/Graphics.hpp>
 
 #include <iostream>
-#include <vector>
 
-#include "src/Menu/Music/MusicManager.h"
-#include "src/Menu/Music/MusicSettings.h"
-
-#include "src/Menu/Graphics/ScreenSettings.h"
-#include "src/Menu/Screens.h"
+#include "Menu/Screens.h"
+#include "Menu/Music/MusicManager.h"
+#include "Menu/Music/MusicSettings.h"
+#include "Menu/Graphics/ScreenSettings.h"
 
 
 int main()

@@ -8,13 +8,13 @@
 #include "Music/MusicSettings.h"
 
 
-#include <Animation.h>
-#include <Level.h>
-#include <Entity.h>
-#include <Enemy.h>
-#include <Player.h>
-#include <Bullet.h>
-#include <Torch.h>
+#include "../Entity/Animation/Animation.h"
+#include "../Entity/Level/Level.h"
+#include "../Entity/Entity.h"
+#include "../Entity/Enemy.h"
+#include "../Entity/Player.h"
+#include "../Entity/Bullet.h"
+#include "../Entity/Torch.h"
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
