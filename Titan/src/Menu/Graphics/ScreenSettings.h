@@ -9,10 +9,9 @@ class ScreenSettings
 {
 
 public:
-	ScreenSettings();
-	~ScreenSettings();
+    ScreenSettings();
+    ~ScreenSettings();
 
-	bool getScreenSettigns() const;
-	void setScreenSettings(bool screen);
-
+    bool getScreenSettings() const;
+    void setScreenSettings(bool screen);
 };

@@ -8,17 +8,16 @@
 class InMenuMusic
 {
 private:
-	sf::Music menuTheme;
+    sf::Music menuTheme;
 
 public:
-	InMenuMusic();
-	~InMenuMusic();
+    InMenuMusic();
+    ~InMenuMusic();
 
-	void loadMusic(float &volume, std::string path);
-	void playMusic(std::string music);
-	void stopMusic(std::string which);
-
-	void menuVolume(float &volume);
+    void loadMusic(float &volume, std::string path);
+    void playMusic(std::string music);
+    void stopMusic(std::string which);
+    void menuVolume(float &volume);
 };
 
 
@@ -27,16 +26,15 @@ public:
 class InGameMusic
 {
 private:
-	sf::Music gameTheme;
+    sf::Music gameTheme;
 
 public:
-	InGameMusic();
-	~InGameMusic();
+    InGameMusic();
+    ~InGameMusic();
 
-	void loadMusic(float &volume, std::string path);
-	void playMusic();
-	void playMusic(bool loop);
-	void stopMusic(std::string which);
-
-	void gameVolume(float &volume);
+    void loadMusic(float &volume, std::string path);
+    void playMusic();
+    void playMusic(bool loop);
+    void stopMusic(std::string which);
+    void gameVolume(float &volume);
 };

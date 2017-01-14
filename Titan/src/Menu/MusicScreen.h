@@ -9,16 +9,16 @@
 #include <SFML/Graphics.hpp>
 
 
-class MusicScreen: public Screen
+class MusicScreen : public Screen
 {
 
 private:
-	ScreenSettings scrSet;
-	bool isFullScreen;
+    ScreenSettings scrSet;
+    bool isFullScreen;
 
 public:
-	MusicScreen();
-	~MusicScreen();
+    MusicScreen();
+    ~MusicScreen();
 
-	int run(sf::RenderWindow &window);
+    int run(sf::RenderWindow &window);
 };

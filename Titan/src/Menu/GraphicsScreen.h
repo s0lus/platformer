@@ -7,16 +7,16 @@
 
 #include <SFML/Graphics.hpp>
 
-class GraphicsScreen: public Screen
+class GraphicsScreen : public Screen
 {
 
 private:
-	ScreenSettings scrSet;
-	bool isFullScreen;
+    ScreenSettings scrSet;
+    bool isFullScreen;
 
 public:
-	GraphicsScreen();
-	~GraphicsScreen();
+    GraphicsScreen();
+    ~GraphicsScreen();
 
-	int run(sf::RenderWindow &window);
+    int run(sf::RenderWindow &window);
 };

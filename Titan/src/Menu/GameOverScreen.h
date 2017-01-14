@@ -9,15 +9,13 @@
 
 class GameOverScreen : public Screen
 {
-
 private:
-	ScreenSettings scrSet;
-	bool isFullScreen;
+    ScreenSettings scrSet;
+    bool isFullScreen;
 
 public:
-	GameOverScreen();
-	~GameOverScreen();
+    GameOverScreen();
+    ~GameOverScreen();
 
-	int run(sf::RenderWindow &window);
-
+    int run(sf::RenderWindow &window);
 };

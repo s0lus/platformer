@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "TinyXML/tinyxml.h"
+#include "tinyxml.h"
 
 
 // -------------------------- Animation --------------------------//
@@ -17,7 +17,7 @@ public:
 
 	std::vector<sf::IntRect> frames, frames_flip;
 	float currentFrame, speed;
-	bool loop;	// loop показвает зациклена ли анимация. Например анимация взрыва должна проиграться один раз и остановиться, loop=false
+	bool loop;	// loop пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, loop=false
 	bool flip, isPlaying;
 	sf::Sprite sprite;
 
@@ -36,7 +36,7 @@ public:
 	sf::String currentAnim;
 	std::map<sf::String, Animation> animList;
 
-	// Загрузка анимации из файла XML
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ XML
 	void loadFromXML(std::string fileName, sf::Texture &t);
 
 	void set(sf::String name);

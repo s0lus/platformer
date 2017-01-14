@@ -8,18 +8,12 @@
 
 class Screen
 {
-
 public:
-	Screen()
-	{
+    Screen()
+    {};
 
-	};
+    virtual ~Screen()
+    {};
 
-	virtual ~Screen()
-	{
-
-	};
-
-	virtual int run(sf::RenderWindow &window) = 0;
-
+    virtual int run(sf::RenderWindow &window) = 0;
 };

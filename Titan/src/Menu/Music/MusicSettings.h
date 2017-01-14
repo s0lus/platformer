@@ -6,9 +6,9 @@
 class MusicSettings
 {
 public:
-	MusicSettings();
-	~MusicSettings();
+    MusicSettings();
+    ~MusicSettings();
 
-	void getSoundSettings(float &volume) const;
-	void setSoundSettings(float &volume);
+    void getSoundSettings(float &volume) const;
+    void setSoundSettings(float &volume);
 };

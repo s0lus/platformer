@@ -13,13 +13,12 @@ class MenuScreen : public Screen
 {
 
 private:
-	ScreenSettings scrSet;
-	bool isFullScreen;
+    ScreenSettings scrSet;
+    bool isFullScreen;
 
 public:
-	MenuScreen();
-	~MenuScreen();
+    MenuScreen();
+    ~MenuScreen();
 
-	int run(sf::RenderWindow &window);
-
+    int run(sf::RenderWindow &window);
 };
