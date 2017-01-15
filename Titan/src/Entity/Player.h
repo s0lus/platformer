@@ -8,28 +8,28 @@
 
 #include <SFML/Graphics.hpp>
 
-class Player: public Entity
+class Player : public Entity
 {
 public:
-	Player(AnimationManager &a, Level &lev, int x, int y);
-	~Player();
+    Player(AnimationManager &a, Level &lev, int x, int y);
+    ~Player();
 
-	enum
-	{
-		stay, walk, duck, jump, climb, swim
-	} STATE;
+    enum
+    {
+        stay, walk, duck, jump, climb, swim
+    } STATE;
 
     //Управление персонажем
-	void keyCheck();
+    void keyCheck();
     //Просчет столкновений
-	void collision(int num);
+    void collision(int num);
     //Обновление состояния персонажа
-	void update(float time);
+    void update(float time);
 
 
-	bool onLadder, shoot, hit;
+    bool onLadder, shoot, hit;
     bool canShoot = true;
     //Конфигурация управления персонажем
-	std::map<std::string, bool> key;
+    std::map<std::string, bool> key;
 
 };

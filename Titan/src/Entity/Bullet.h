@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Animation/Animation.h"
+#include "Animation/AnimationManager.h"
 #include "Level/Level.h"
 #include "Entity.h"
 

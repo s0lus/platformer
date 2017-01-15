@@ -38,8 +38,8 @@ int main()
 
     // Music settings
     float volume;
-    float volumeCheck = NULL;
-    float newVolume = NULL;
+    float volumeCheck;
+    float newVolume;
 
     MusicSettings musicSettings;
     musicSettings.getSoundSettings(volume);
