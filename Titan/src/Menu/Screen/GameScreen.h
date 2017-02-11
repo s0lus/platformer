@@ -4,8 +4,8 @@
 #include <list>
 
 #include "Screen.h"
-#include "Music/MusicManager.h"
-#include "Music/MusicSettings.h"
+#include "Menu/Music/MusicManager.h"
+#include "Menu/Music/MusicSettings.h"
 
 #include "Entity/Animation/Animation.h"
 #include "Entity/Level/Level.h"

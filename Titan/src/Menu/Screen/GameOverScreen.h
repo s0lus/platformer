@@ -1,24 +1,21 @@
 #pragma once
 
-#include "Screen.h"
-#include "Graphics/ScreenSettings.h"
-
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
-
 #include <iostream>
 
+#include "Screen.h"
+#include "Menu/Graphics/ScreenSettings.h"
 
-class OptionsScreen : public Screen
+#include <SFML/Graphics.hpp>
+
+class GameOverScreen : public Screen
 {
-
 private:
     ScreenSettings scrSet;
     bool isFullScreen;
 
 public:
-    OptionsScreen();
-    ~OptionsScreen();
+    GameOverScreen();
+    ~GameOverScreen();
 
     int run(sf::RenderWindow &window);
 };

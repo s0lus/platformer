@@ -1,13 +1,15 @@
 #pragma once
 
 #include "Screen.h"
-#include "Graphics/ScreenSettings.h"
+#include "Menu/Graphics/ScreenSettings.h"
+
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include <iostream>
 
-#include <SFML/Graphics.hpp>
 
-class GraphicsScreen : public Screen
+class MenuScreen : public Screen
 {
 
 private:
@@ -15,8 +17,8 @@ private:
     bool isFullScreen;
 
 public:
-    GraphicsScreen();
-    ~GraphicsScreen();
+    MenuScreen();
+    ~MenuScreen();
 
     int run(sf::RenderWindow &window);
 };

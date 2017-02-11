@@ -1,4 +1,4 @@
-#include "Music/MusicSettings.h"
+#include "Menu/Music/MusicSettings.h"
 #include "MusicScreen.h"
 
 MusicScreen::MusicScreen()
