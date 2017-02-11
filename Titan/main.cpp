@@ -3,6 +3,8 @@
 #include <iostream>
 
 #include "Menu/Screen/Screens.h"
+#include "Menu/Music/GameMusic.h"
+#include "Menu/Music/MenuMusic.h"
 
 int main()
 {
@@ -44,11 +46,11 @@ int main()
     MusicSettings musicSettings;
     musicSettings.getSoundSettings(volume);
 
-    InMenuMusic menuMusic;
+    MenuMusic menuMusic;
     menuMusic.loadMusic(volume, "res/music/InMenuMusic.ogg");
     menuMusic.playMusic("menu");
 
-    InGameMusic gameMusic;
+    GameMusic gameMusic;
     gameMusic.loadMusic(volume, "res/music/InGameMusic.ogg");
 
     while (screen >= 0) {

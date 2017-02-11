@@ -122,7 +122,7 @@ int GameScreen::run(sf::RenderWindow &window)
     MusicSettings musSet;
     musSet.getSoundSettings(volume);
 
-    InGameMusic arrowShoot;
+    GameMusic arrowShoot;
     arrowShoot.loadMusic(volume, "res/music/arrow.ogg");
 
     while (window.isOpen()) {
