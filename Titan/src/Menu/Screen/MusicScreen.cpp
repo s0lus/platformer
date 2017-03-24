@@ -68,7 +68,7 @@ int MusicScreen::run(sf::RenderWindow &window)
 
     musicVolume.setFont(font);
     musicVolume.setString("Music Volume");
-    musicVolume.setColor(sf::Color::Black);
+    musicVolume.setFillColor(sf::Color::Black);
     textRect = musicVolume.getLocalBounds();
     musicVolume.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
     musicVolume.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f - 150));
@@ -81,7 +81,7 @@ int MusicScreen::run(sf::RenderWindow &window)
 
     sf::Text selectedVolume;
     selectedVolume.setFont(font1);
-    selectedVolume.setColor(sf::Color::Red);
+    selectedVolume.setFillColor(sf::Color::Red);
     textRect = selectedVolume.getLocalBounds();
     selectedVolume.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
     selectedVolume.setPosition(sf::Vector2f(window.getSize().x / 2.0f - 20, window.getSize().y / 2.0f - 55));

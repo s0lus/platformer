@@ -67,7 +67,7 @@ int GraphicsScreen::run(sf::RenderWindow &window)
 
     fullScreen.setFont(font);
     fullScreen.setString("FullScreen");
-    fullScreen.setColor(sf::Color::Black);
+    fullScreen.setFillColor(sf::Color::Black);
     textRect = fullScreen.getLocalBounds();
     fullScreen.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
     fullScreen.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f - 150));
@@ -90,7 +90,7 @@ int GraphicsScreen::run(sf::RenderWindow &window)
 
     help.setFont(font);
     help.setString("You must restart the game");
-    help.setColor(sf::Color::Black);
+    help.setFillColor(sf::Color::Black);
     textRect = help.getLocalBounds();
     help.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
     help.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f + 250));
@@ -160,12 +160,12 @@ int GraphicsScreen::run(sf::RenderWindow &window)
         window.draw(help);
 
         if (menu == 0) {
-            on.setColor(sf::Color::Red);
+            on.setFillColor(sf::Color::Red);
             window.draw(on);
         }
 
         if (menu == 1) {
-            off.setColor(sf::Color::Red);
+            off.setFillColor(sf::Color::Red);
             window.draw(off);
         }
 

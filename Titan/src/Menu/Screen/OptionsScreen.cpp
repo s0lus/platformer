@@ -127,13 +127,13 @@ int OptionsScreen::run(sf::RenderWindow &window)
         //std::cout << "menu: " << menu << std::endl;
 
         if (menu == 0) {
-            graphics.setColor(sf::Color::Red);
-            music.setColor(sf::Color::White);
+            graphics.setFillColor(sf::Color::Red);
+            music.setFillColor(sf::Color::White);
         }
 
         if (menu == 1) {
-            graphics.setColor(sf::Color::White);
-            music.setColor(sf::Color::Red);
+            graphics.setFillColor(sf::Color::White);
+            music.setFillColor(sf::Color::Red);
         }
 
         window.clear();

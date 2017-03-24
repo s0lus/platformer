@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Text.hpp>
 
 class GraphicsScreen : public Screen
 {

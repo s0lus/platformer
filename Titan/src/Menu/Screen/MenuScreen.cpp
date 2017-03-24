@@ -142,21 +142,21 @@ int MenuScreen::run(sf::RenderWindow &window)
         //std::cout << "menu:" << menu << std::endl;
 
         if (menu == 0) {
-            startGame.setColor(sf::Color::Red);
-            optionsGame.setColor(sf::Color::White);
-            exitGame.setColor(sf::Color::White);
+            startGame.setFillColor(sf::Color::Red);
+            optionsGame.setFillColor(sf::Color::White);
+            exitGame.setFillColor(sf::Color::White);
         }
 
         if (menu == 1) {
-            startGame.setColor(sf::Color::White);
-            optionsGame.setColor(sf::Color::Red);
-            exitGame.setColor(sf::Color::White);
+            startGame.setFillColor(sf::Color::White);
+            optionsGame.setFillColor(sf::Color::Red);
+            exitGame.setFillColor(sf::Color::White);
         }
 
         if (menu == 2) {
-            startGame.setColor(sf::Color::White);
-            optionsGame.setColor(sf::Color::White);
-            exitGame.setColor(sf::Color::Red);
+            startGame.setFillColor(sf::Color::White);
+            optionsGame.setFillColor(sf::Color::White);
+            exitGame.setFillColor(sf::Color::Red);
         }
 
         window.setView(view);
