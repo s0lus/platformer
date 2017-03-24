@@ -21,11 +21,13 @@ void Animation::tick(float time)
                 return;
             }
         }
-        float i = currentFrame;
-        sprite.setTextureRect(frames[i]);
-        if (flip) sprite.setTextureRect(frames_flip[i]);
+        sprite.setTextureRect(frames[currentFrame]);
+
+        if (flip)
+            sprite.setTextureRect(frames_flip[currentFrame]);
     } else {
         sprite.setTextureRect(frames[frames.size() - 1]);
-        if (flip) sprite.setTextureRect(frames_flip[frames_flip.size() - 1]);
+        if (flip)
+            sprite.setTextureRect(frames_flip[frames_flip.size() - 1]);
     }
 }

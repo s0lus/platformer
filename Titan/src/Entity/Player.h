@@ -8,15 +8,19 @@
 
 #include <SFML/Graphics.hpp>
 
-class Player : public Entity
+class Player: public Entity
 {
 public:
     Player(AnimationManager &a, Level &lev, int x, int y);
     ~Player();
 
-    enum
-    {
-        stay, walk, duck, jump, climb, swim
+    enum {
+        stay,
+        walk,
+        duck,
+        jump,
+        climb,
+        swim
     } STATE;
 
     //Управление персонажем
@@ -26,10 +30,8 @@ public:
     //Обновление состояния персонажа
     void update(float time);
 
-
     bool onLadder, shoot, hit;
     bool canShoot = true;
     //Конфигурация управления персонажем
     std::map<std::string, bool> key;
-
 };

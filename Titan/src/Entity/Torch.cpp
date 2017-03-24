@@ -10,5 +10,5 @@ Torch::~Torch()
 
 void Torch::update(float time)
 {
-    anim.tick(time);
+    animationManager.tick(time);
 }

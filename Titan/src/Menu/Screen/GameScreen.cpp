@@ -25,14 +25,14 @@ int GameScreen::run(sf::RenderWindow &window)
     // Loading animation for main character
     AnimationManager animCharacter;
     animCharacter.loadFromXML("res/player/hero.xml", spriteCharacter);
-    animCharacter.animList["jump"].loop = 0;
-    animCharacter.animList["walk"].loop = 1;
-    animCharacter.animList["shoot"].loop = 0;
+    animCharacter.animationList["jump"].loop = 0;
+    animCharacter.animationList["walk"].loop = 1;
+    animCharacter.animationList["shoot"].loop = 0;
 
     // Loading animation bullet for main character
     AnimationManager bulletCharacter;
     bulletCharacter.loadFromXML("res/player/hero_bullet.xml", spriteCharacter);
-    bulletCharacter.animList["explode"].loop = 0;
+    bulletCharacter.animationList["explode"].loop = 0;
 
     // ------------------------------------------------------------------------ //
 
@@ -48,7 +48,7 @@ int GameScreen::run(sf::RenderWindow &window)
     // Loading animation for enemy1
     AnimationManager animEnemy1;
     animEnemy1.loadFromXML("res/enemy/enemy1.xml", enemy1);
-    animEnemy1.animList["move"].loop = 1;
+    animEnemy1.animationList["move"].loop = 1;
 
 
     // Loading enemy1
@@ -58,7 +58,7 @@ int GameScreen::run(sf::RenderWindow &window)
     // Loading animation for enemy2
     AnimationManager animEnemy2;
     animEnemy2.loadFromXML("res/enemy/enemy2.xml", enemy2);
-    animEnemy2.animList["move"].loop = 1;
+    animEnemy2.animationList["move"].loop = 1;
 
 
     // ------------------------------------------------------------------------ //
@@ -75,7 +75,7 @@ int GameScreen::run(sf::RenderWindow &window)
     // Loading animation for torch
     AnimationManager animTorchShadow;
     animTorchShadow.loadFromXML("res/objects/torch_and_shadow.xml", torchWithShadow);
-    animTorchShadow.animList["lighting"].loop = 1;
+    animTorchShadow.animationList["lighting"].loop = 1;
 
 
     sf::Texture torch;
@@ -83,7 +83,7 @@ int GameScreen::run(sf::RenderWindow &window)
 
     AnimationManager animTorch;
     animTorch.loadFromXML("res/objects/torch.xml", torch);
-    animTorch.animList["lighting"].loop = 1;
+    animTorch.animationList["lighting"].loop = 1;
 
     // ------------------------------------------------------------------------ //
 

@@ -24,24 +24,25 @@ void Enemy::update(float time)
         dx *= -1;
         //timer = 0;
         dir = !dir;
-        anim.flip(dx < 0);
+        animationManager.flip(dx < 0);
         timer = 0;
     }
 
     if (Health <= 0) {
-        anim.set("dead");
+        animationManager.set("dead");
         dx = 0;
         timer_end += time;
-        if (timer_end > 4000) life = false;
+        if (timer_end > 4000) {
+            life = false;
+        }
     }
 
-    anim.tick(time);
+    animationManager.tick(time);
 }
 
-//ѕадение врага на землю
 void Enemy::collision(int dir)
 {
-    for (int i = 0; i < obj.size(); i++)
+    for (int i = 0; i < obj.size(); i++) {
         if (getRect().intersects(obj[i].rect)) {
             if (obj[i].name == "wall") {
                 if (dy > 0 && dir == 1) {
@@ -50,4 +51,5 @@ void Enemy::collision(int dir)
                 }
             }
         }
+    }
 }

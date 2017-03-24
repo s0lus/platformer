@@ -8,7 +8,6 @@ class Animation
 {
 public:
     Animation();
-
     ~Animation();
 
     void tick(float time);

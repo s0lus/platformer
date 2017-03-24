@@ -12,8 +12,8 @@ public:
     AnimationManager();
     ~AnimationManager();
 
-    sf::String currentAnim;
-    std::map<sf::String, Animation> animList;
+    sf::String currentAnimation;
+    std::map<sf::String, Animation> animationList;
 
     void loadFromXML(std::string fileName, sf::Texture &t);
     void set(sf::String name);

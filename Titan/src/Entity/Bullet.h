@@ -8,8 +8,9 @@
 class Bullet: public Entity
 {
 public:
-	Bullet(AnimationManager &a, Level &lev, int x, int y, bool dir);
-	~Bullet();
+    Bullet(AnimationManager &a, Level &lev, int x, int y, bool dir);
 
-	void update(float time);
+    ~Bullet();
+
+    void update(float time);
 };

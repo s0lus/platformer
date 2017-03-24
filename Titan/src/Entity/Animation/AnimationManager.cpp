@@ -5,7 +5,7 @@ AnimationManager::AnimationManager()
 
 AnimationManager::~AnimationManager()
 {
-    animList.clear();
+    animationList.clear();
 }
 
 
@@ -21,12 +21,11 @@ void AnimationManager::loadFromXML(std::string fileName, sf::Texture &t)
     TiXmlElement *animElement;
     animElement = head->FirstChildElement("animation");
     while (animElement) {
-
-        Animation anim;
-        currentAnim = animElement->Attribute("title");
-        int delay = atoi(animElement->Attribute("delay"));
-        anim.speed = 1.0 / delay;
-        anim.sprite.setTexture(t);
+        Animation animation;
+        currentAnimation = animElement->Attribute("title");
+        float delay = atoi(animElement->Attribute("delay"));
+        animation.speed = 1.f / delay;
+        animation.sprite.setTexture(t);
 
         TiXmlElement *cut;
         cut = animElement->FirstChildElement("cut");
@@ -36,66 +35,66 @@ void AnimationManager::loadFromXML(std::string fileName, sf::Texture &t)
             int w = atoi(cut->Attribute("w"));
             int h = atoi(cut->Attribute("h"));
 
-            anim.frames.push_back(sf::IntRect(x, y, w, h));
-            anim.frames_flip.push_back(sf::IntRect(x + w, y, -w, h));
+            animation.frames.push_back(sf::IntRect(x, y, w, h));
+            animation.frames_flip.push_back(sf::IntRect(x + w, y, -w, h));
             cut = cut->NextSiblingElement("cut");
         }
 
-        anim.sprite.setOrigin(0, anim.frames[0].height);
+        animation.sprite.setOrigin(0, animation.frames[0].height);
 
-        animList[currentAnim] = anim;
+        animationList[currentAnimation] = animation;
         animElement = animElement->NextSiblingElement("animation");
     }
 }
 
 void AnimationManager::set(sf::String name)
 {
-    currentAnim = name;
-    animList[currentAnim].flip = 0;
+    currentAnimation = name;
+    animationList[currentAnimation].flip = 0;
 }
 
 void AnimationManager::draw(sf::RenderWindow &window, float x, float y)
 {
-    animList[currentAnim].sprite.setPosition(x, y);
-    window.draw(animList[currentAnim].sprite);
+    animationList[currentAnimation].sprite.setPosition(x, y);
+    window.draw(animationList[currentAnimation].sprite);
 }
 
 void AnimationManager::flip(bool b)
 {
-    animList[currentAnim].flip = b;
+    animationList[currentAnimation].flip = b;
 }
 
 void AnimationManager::tick(float time)
 {
-    animList[currentAnim].tick(time);
+    animationList[currentAnimation].tick(time);
 }
 
 void AnimationManager::pause()
 {
-    animList[currentAnim].isPlaying = false;
+    animationList[currentAnimation].isPlaying = false;
 }
 
 void AnimationManager::play()
 {
-    animList[currentAnim].isPlaying = true;
+    animationList[currentAnimation].isPlaying = true;
 }
 
 void AnimationManager::play(sf::String name)
 {
-    animList[name].isPlaying = true;
+    animationList[name].isPlaying = true;
 }
 
 bool AnimationManager::isPlaying()
 {
-    return animList[currentAnim].isPlaying;
+    return animationList[currentAnimation].isPlaying;
 }
 
 float AnimationManager::getHeight()
 {
-    return animList[currentAnim].frames[0].height;
+    return animationList[currentAnimation].frames[0].height;
 }
 
 float AnimationManager::getWidth()
 {
-    return animList[currentAnim].frames[0].width;
+    return animationList[currentAnimation].frames[0].width;
 }

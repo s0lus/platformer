@@ -18,34 +18,40 @@ void Player::keyCheck()
 {
     if (key["Left"]) {
         dir = 1;
-        if (STATE != duck)
+        if (STATE != duck) {
             dx = -walkSpeed;
+        }
 
-        if (STATE == stay)
+        if (STATE == stay) {
             STATE = walk;
+        }
     }
 
     if (key["Right"]) {
         dir = 0;
-        if (STATE != duck)
+        if (STATE != duck) {
             dx = walkSpeed;
+        }
 
-        if (STATE == stay)
+        if (STATE == stay) {
             STATE = walk;
+        }
     }
 
     if (key["Up"]) {
-        if (onLadder)
+        if (onLadder) {
             STATE = climb;
+        }
 
         if (STATE == stay || STATE == walk) {
             dy = -jumpBoost;
             STATE = jump;
-            anim.play("jump");
+            animationManager.play("jump");
         }
 
-        if (STATE == swim || STATE == climb)
+        if (STATE == swim || STATE == climb) {
             dy = -climbUpSpeed;
+        }
     }
 
     if (key["Down"]) {
@@ -54,8 +60,9 @@ void Player::keyCheck()
             dx = 0;
         }
 
-        if (STATE == swim || STATE == climb)
+        if (STATE == swim || STATE == climb) {
             dy = climbDownSpeed;
+        }
     }
 
     if (key["Space"]) {
@@ -65,13 +72,15 @@ void Player::keyCheck()
     if (!(key["Right"] || key["Left"])) {
         dx = 0;
 
-        if (STATE == walk)
+        if (STATE == walk) {
             STATE = stay;
+        }
     }
 
     if (!(key["Up"] || key["Down"])) {
-        if (STATE == swim || STATE == climb)
+        if (STATE == swim || STATE == climb) {
             dy = 0;
+        }
     }
 
     if (!key["Down"]) {
@@ -90,45 +99,49 @@ void Player::update(float time)
 {
     keyCheck();
 
-    if (STATE == stay)
-        anim.set("stay");
+    if (STATE == stay) {
+        animationManager.set("stay");
+    }
 
-    if (STATE == walk)
-        anim.set("walk");
+    if (STATE == walk) {
+        animationManager.set("walk");
+    }
 
-    if (STATE == jump)
-        anim.set("jump");
+    if (STATE == jump) {
+        animationManager.set("jump");
+    }
 
-    if (STATE == duck)
-        anim.set("duck");
+    if (STATE == duck) {
+        animationManager.set("duck");
+    }
 
     if (STATE == climb) {
-        anim.set("climb");
-        anim.pause();
-        if (dy != 0)
-            anim.play();
+        animationManager.set("climb");
+        animationManager.pause();
+        if (dy != 0) {
+            animationManager.play();
+        }
 
-        if (!onLadder)
+        if (!onLadder) {
             STATE = stay;
+        }
     }
 
     if ((dy != 0) && (STATE != climb) && (!hit)) {
         STATE = jump;
-        anim.set("jump");
+        animationManager.set("jump");
     }
 
     if (shoot) {
         if (STATE == walk) {
             shoot = false;
-            anim.set("shootAndWalk");
+            animationManager.set("shootAndWalk");
             dx = 0;
         }
 
         if (canShoot) {
-            anim.set("shoot");
-
+            animationManager.set("shoot");
             dx = 0;
-
         }
         // CanShoot = false;
     }
@@ -139,18 +152,19 @@ void Player::update(float time)
             hit = false;
             timer = 0;
         }
-        anim.set("hit");
+        animationManager.set("hit");
     }
 
-    if (dir)
-        anim.flip();
-
+    if (dir) {
+        animationManager.flip();
+    }
 
     x += dx * time;
     collision(0);
     
-    if (STATE != climb)
+    if (STATE != climb) {
         dy += g * time;
+    }
 
     y += dy * time;
 
@@ -159,16 +173,17 @@ void Player::update(float time)
     
     if (Health <= 0) {
         key["Right"] = key["Left"] = key["Up"] = key["Down"] = key["Space"] = false;
-        anim.set("dead");
+        animationManager.set("dead");
         dx = 0;
         timer_end += time;
 
-        if (timer_end > 5000)
+        if (timer_end > 5000) {
             life = false;
+        }
     }
 
 
-    anim.tick(time);
+    animationManager.tick(time);
 
     //key["R"] = key["L"] = key["Up"] = key["Down"] = key["Space"] = false;
 }

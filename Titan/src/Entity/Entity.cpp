@@ -3,7 +3,7 @@
 //Инициализация сущности по анимации и позиции
 Entity::Entity(AnimationManager &A, int X, int Y)
 {
-    anim = A;
+    animationManager = A;
     x = X;
     y = Y;
     dir = 0;
@@ -23,7 +23,7 @@ Entity::~Entity()
 //Нарисовать сущность на окне
 void Entity::draw(sf::RenderWindow &window)
 {
-    anim.draw(window, x, y + h);
+    animationManager.draw(window, x, y + h);
 }
 
 //Получить каркас сущности
@@ -38,11 +38,12 @@ sf::FloatRect Entity::getRect() const
 void Entity::option(sf::String NAME, float SPEED, int HEALTH, sf::String FIRST_ANIM)
 {
     Name = NAME;
-    if (FIRST_ANIM != "")
-        anim.set(FIRST_ANIM);
+    if (FIRST_ANIM != "") {
+        animationManager.set(FIRST_ANIM);
+    }
 
-    w = anim.getWidth();
-    h = anim.getHeight();
+    w = animationManager.getWidth();
+    h = animationManager.getHeight();
     dx = SPEED;
     Health = HEALTH;
 }

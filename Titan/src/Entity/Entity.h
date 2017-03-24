@@ -36,7 +36,7 @@ public:
     // положение, размеры, мгновенная скорость
     float x, y, dx, dy, w, h;
 
-    AnimationManager anim;
+    AnimationManager animationManager;
 
     // Набор объектов, с которыми может взаимодействовать данная сущность
     std::vector<Object> obj;
@@ -54,5 +54,4 @@ public:
     int Health;
 
     sf::FloatRect getRect() const;
-
 };
