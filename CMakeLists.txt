@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.6)
-project(platformer)
+project(Titan/platformer)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(EXECUTABLE_OUTPUT_PATH bin)
+
+file(WRITE bin/settings/musicsettings.txt)
+file(WRITE bin/settings/screensettings.txt)
+
+file(GLOB MUSIC Titan/res/*)
+file(COPY ${MUSIC} DESTINATION bin/res)
 
 include_directories(Titan/src/ Dependencies/TinyXML/)
 file(GLOB_RECURSE SOURCE_FILES Titan/* Dependencies/TinyXML/*)
