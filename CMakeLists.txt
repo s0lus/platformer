@@ -9,6 +9,7 @@ file(WRITE bin/settings/screensettings.txt)
 
 file(GLOB MUSIC Titan/res/*)
 file(COPY ${MUSIC} DESTINATION bin/res)
+file(COPY Titan/tileset_level_1.PNG DESTINATION bin)
 
 include_directories(Titan/src/ Dependencies/TinyXML/)
 file(GLOB_RECURSE SOURCE_FILES Titan/* Dependencies/TinyXML/*)
