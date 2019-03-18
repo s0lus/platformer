@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 project(Titan/platformer)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
 set(EXECUTABLE_OUTPUT_PATH bin)
 
 file(WRITE bin/settings/musicsettings.txt)
