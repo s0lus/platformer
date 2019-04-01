@@ -5,7 +5,7 @@ Bullet::Bullet(AnimationManager &a, Level &lev, int x, int y, bool dir) : Entity
     option("Bullet", 0.3, 10, "move");
 
     if (dir) {
-        dx = -0.3d;
+        dx = -0.3;
     }
 
     obj = lev.getObjects("wall");
