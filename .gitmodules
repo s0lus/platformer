@@ -1,0 +1,3 @@
+[submodule "Titan/vendor/tinyxml2"]
+	path = Titan/vendor/tinyxml2
+	url = git@github.com:leethomason/tinyxml2.git
