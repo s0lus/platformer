@@ -7,7 +7,7 @@
 #include <map>
 #include <iostream>
 
-#include "tinyxml.h"
+#include "tinyxml2.h"
 
 struct Object
 {
