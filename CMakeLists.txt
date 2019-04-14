@@ -11,8 +11,12 @@ file(GLOB MUSIC Titan/res/*)
 file(COPY ${MUSIC} DESTINATION bin/res)
 file(COPY Titan/tileset_level_1.PNG DESTINATION bin)
 
-include_directories(Titan/src/ Dependencies/TinyXML/)
-file(GLOB_RECURSE SOURCE_FILES Titan/* Dependencies/TinyXML/*)
+# TODO: Find a better solution. For now IDK how to resolve this shit :(
+# TODO: Duplicate _main symbol
+file(REMOVE Titan/vendor/tinyxml2/xmltest.cpp Titan/vendor/tinyxml2/contrib/html5-printer.cpp)
+
+include_directories(Titan/src/ Titan/vendor/tinyxml2)
+file(GLOB_RECURSE SOURCE_FILES Titan/*)
 add_executable(platformer ${SOURCE_FILES})
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
