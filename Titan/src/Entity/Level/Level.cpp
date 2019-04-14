@@ -25,10 +25,7 @@ bool Level::loadFromFile(std::string filename)
 {
     tinyxml2::XMLDocument levelFile;
 
-    if (!levelFile.LoadFile(filename.c_str())) {
-        std::cout << "Loading level \"" << filename << "\" failed." << std::endl;
-        return false;
-    }
+    levelFile.LoadFile(filename.c_str());
 
     tinyxml2::XMLElement *map;
     map = levelFile.FirstChildElement("map");
