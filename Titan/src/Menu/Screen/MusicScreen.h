@@ -18,6 +18,7 @@ private:
 
 public:
     MusicScreen();
+
     ~MusicScreen();
 
     int run(sf::RenderWindow &window);

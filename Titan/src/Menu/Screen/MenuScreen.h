@@ -18,6 +18,7 @@ private:
 
 public:
     MenuScreen();
+
     ~MenuScreen();
 
     int run(sf::RenderWindow &window);

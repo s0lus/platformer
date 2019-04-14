@@ -11,11 +11,16 @@ private:
 
 public:
     GameMusic();
+
     ~GameMusic();
 
     void loadMusic(float &volume, std::string path);
+
     void playMusic();
+
     void playMusic(bool loop);
+
     void stopMusic(std::string which);
+
     void gameVolume(float &volume);
 };

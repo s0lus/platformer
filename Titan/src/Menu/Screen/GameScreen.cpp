@@ -88,8 +88,8 @@ int GameScreen::run(sf::RenderWindow &window)
     // ------------------------------------------------------------------------ //
 
 
-    std::list<Entity *> entities;
-    std::list<Entity *>::iterator it;
+    std::list<Entity*> entities;
+    std::list<Entity*>::iterator it;
 
     std::vector<Object> enemy1_ = lvl.getObjects("enemy1");
     for (int i = 0; i < enemy1_.size(); i++)
@@ -192,7 +192,7 @@ int GameScreen::run(sf::RenderWindow &window)
         }
 
         for (it = entities.begin(); it != entities.end();) {
-            Entity *b = *it;
+            Entity* b = *it;
             b->update(time);
             if (b->life == false) {
                 it = entities.erase(it);
@@ -205,7 +205,7 @@ int GameScreen::run(sf::RenderWindow &window)
         if (Hero.Health > 0) {
             for (it = entities.begin(); it != entities.end(); it++) {
                 if ((*it)->Name == "Enemy") {
-                    Entity *enemy = *it;
+                    Entity* enemy = *it;
 
                     if (enemy->Health <= 0)
                         continue;
@@ -228,8 +228,8 @@ int GameScreen::run(sf::RenderWindow &window)
                         }
                     }
 
-                    for (std::list<Entity *>::iterator it2 = entities.begin(); it2 != entities.end(); it2++) {
-                        Entity *bullet = *it2;
+                    for (std::list<Entity*>::iterator it2 = entities.begin(); it2 != entities.end(); it2++) {
+                        Entity* bullet = *it2;
                         if (bullet->Name == "Bullet")
                             if (bullet->Health > 0)
                                 if (bullet->getRect().intersects(enemy->getRect())) {

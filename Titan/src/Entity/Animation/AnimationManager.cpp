@@ -15,10 +15,10 @@ void AnimationManager::loadFromXML(std::string fileName, sf::Texture &t)
 
     animFile.LoadFile(fileName.c_str());
 
-    tinyxml2::XMLElement *head;
+    tinyxml2::XMLElement* head;
     head = animFile.FirstChildElement("sprites");
 
-    tinyxml2::XMLElement *animElement;
+    tinyxml2::XMLElement* animElement;
     animElement = head->FirstChildElement("animation");
     while (animElement) {
         Animation animation;
@@ -27,7 +27,7 @@ void AnimationManager::loadFromXML(std::string fileName, sf::Texture &t)
         animation.speed = 1.f / delay;
         animation.sprite.setTexture(t);
 
-        tinyxml2::XMLElement *cut;
+        tinyxml2::XMLElement* cut;
         cut = animElement->FirstChildElement("cut");
         while (cut) {
             int x = atoi(cut->Attribute("x"));

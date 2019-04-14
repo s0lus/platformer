@@ -17,7 +17,7 @@ int main()
         window.create(sf::VideoMode(screenWidth, screenHeight), "Forge of the gods", sf::Style::Default);
     }
 
-    std::vector<Screen *> Screens;
+    std::vector<Screen*> Screens;
     int screen = 0;
 
     MenuScreen menuScr;

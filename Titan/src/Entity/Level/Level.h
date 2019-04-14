@@ -35,6 +35,7 @@ class Level
 {
 public:
     Level();
+
     ~Level();
 
     bool loadFromFile(std::string filename);
@@ -42,11 +43,15 @@ public:
     void draw(sf::RenderWindow &window);
 
     Object getObject(std::string name);
+
     std::vector<Object> getObjects(std::string name);
+
     std::vector<Object> getAllObjects() const;
+
     sf::Vector2i getTileSize() const;
 
     float getHeight() const;
+
     float getWidth() const;
 
 private:

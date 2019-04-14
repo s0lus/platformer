@@ -15,6 +15,7 @@ private:
 
 public:
     GameOverScreen();
+
     ~GameOverScreen();
 
     int run(sf::RenderWindow &window);

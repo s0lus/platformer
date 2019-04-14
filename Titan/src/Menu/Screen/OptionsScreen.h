@@ -18,6 +18,7 @@ private:
 
 public:
     OptionsScreen();
+
     ~OptionsScreen();
 
     int run(sf::RenderWindow &window);

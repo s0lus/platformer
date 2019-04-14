@@ -27,7 +27,7 @@ bool Level::loadFromFile(std::string filename)
 
     levelFile.LoadFile(filename.c_str());
 
-    tinyxml2::XMLElement *map;
+    tinyxml2::XMLElement* map;
     map = levelFile.FirstChildElement("map");
 
     width = atoi(map->Attribute("width"));
@@ -35,11 +35,11 @@ bool Level::loadFromFile(std::string filename)
     tileWidth = atoi(map->Attribute("tilewidth"));
     tileHeight = atoi(map->Attribute("tileheight"));
 
-    tinyxml2::XMLElement *tilesetElement;
+    tinyxml2::XMLElement* tilesetElement;
     tilesetElement = map->FirstChildElement("tileset");
     firstTileID = atoi(tilesetElement->Attribute("firstgid"));
 
-    tinyxml2::XMLElement *image;
+    tinyxml2::XMLElement* image;
     image = tilesetElement->FirstChildElement("image");
     std::string imagepath = image->Attribute("source");
 
@@ -71,7 +71,7 @@ bool Level::loadFromFile(std::string filename)
             subRects.push_back(rect);
         }
 
-    tinyxml2::XMLElement *layerElement;
+    tinyxml2::XMLElement* layerElement;
     layerElement = map->FirstChildElement("layer");
     while (layerElement) {
         Layer layer;
@@ -83,14 +83,14 @@ bool Level::loadFromFile(std::string filename)
             layer.opacity = 255;
         }
 
-        tinyxml2::XMLElement *layerDataElement;
+        tinyxml2::XMLElement* layerDataElement;
         layerDataElement = layerElement->FirstChildElement("data");
 
         if (layerDataElement == NULL) {
             std::cout << "Bad map. No layer information found." << std::endl;
         }
 
-        tinyxml2::XMLElement *tileElement;
+        tinyxml2::XMLElement* tileElement;
         tileElement = layerDataElement->FirstChildElement("tile");
 
         if (tileElement == NULL) {
@@ -130,13 +130,13 @@ bool Level::loadFromFile(std::string filename)
 
         layerElement = layerElement->NextSiblingElement("layer");
     }
-    
-    tinyxml2::XMLElement *objectGroupElement;
+
+    tinyxml2::XMLElement* objectGroupElement;
 
     if (map->FirstChildElement("objectgroup") != NULL) {
         objectGroupElement = map->FirstChildElement("objectgroup");
         while (objectGroupElement) {
-            tinyxml2::XMLElement *objectElement;
+            tinyxml2::XMLElement* objectElement;
             objectElement = objectGroupElement->FirstChildElement("object");
 
             while (objectElement) {
@@ -181,10 +181,10 @@ bool Level::loadFromFile(std::string filename)
                 objectRect.width = width;
                 object.rect = objectRect;
 
-                tinyxml2::XMLElement *properties;
+                tinyxml2::XMLElement* properties;
                 properties = objectElement->FirstChildElement("properties");
                 if (properties != NULL) {
-                    tinyxml2::XMLElement *prop;
+                    tinyxml2::XMLElement* prop;
                     prop = properties->FirstChildElement("property");
                     if (prop != NULL) {
                         while (prop) {

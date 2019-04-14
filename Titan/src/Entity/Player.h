@@ -8,13 +8,15 @@
 
 #include <SFML/Graphics.hpp>
 
-class Player: public Entity
+class Player : public Entity
 {
 public:
     Player(AnimationManager &a, Level &lev, int x, int y);
+
     ~Player();
 
-    enum {
+    enum
+    {
         stay,
         walk,
         duck,
@@ -25,8 +27,10 @@ public:
 
     //Управление персонажем
     void keyCheck();
+
     //Просчет столкновений
     void collision(int num);
+
     //Обновление состояния персонажа
     void update(float time);
 

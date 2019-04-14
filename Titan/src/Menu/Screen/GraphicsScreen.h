@@ -17,6 +17,7 @@ private:
 
 public:
     GraphicsScreen();
+
     ~GraphicsScreen();
 
     int run(sf::RenderWindow &window);

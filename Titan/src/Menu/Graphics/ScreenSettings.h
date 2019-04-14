@@ -10,8 +10,10 @@ class ScreenSettings
 
 public:
     ScreenSettings();
+
     ~ScreenSettings();
 
     bool getScreenSettings() const;
+
     void setScreenSettings(bool screen);
 };

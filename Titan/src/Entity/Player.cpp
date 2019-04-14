@@ -68,7 +68,7 @@ void Player::keyCheck()
     if (key["Space"]) {
         shoot = true;
     }
-    
+
     if (!(key["Right"] || key["Left"])) {
         dx = 0;
 
@@ -161,7 +161,7 @@ void Player::update(float time)
 
     x += dx * time;
     collision(0);
-    
+
     if (STATE != climb) {
         dy += g * time;
     }
@@ -170,7 +170,7 @@ void Player::update(float time)
 
     onLadder = false;
     collision(1);
-    
+
     if (Health <= 0) {
         key["Right"] = key["Left"] = key["Up"] = key["Down"] = key["Space"] = false;
         animationManager.set("dead");
