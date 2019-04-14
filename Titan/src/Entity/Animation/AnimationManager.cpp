@@ -11,14 +11,14 @@ AnimationManager::~AnimationManager()
 
 void AnimationManager::loadFromXML(std::string fileName, sf::Texture &t)
 {
-    TiXmlDocument animFile(fileName.c_str());
+    tinyxml2::XMLDocument animFile;
 
-    animFile.LoadFile();
+    animFile.LoadFile(fileName.c_str());
 
-    TiXmlElement *head;
+    tinyxml2::XMLElement *head;
     head = animFile.FirstChildElement("sprites");
 
-    TiXmlElement *animElement;
+    tinyxml2::XMLElement *animElement;
     animElement = head->FirstChildElement("animation");
     while (animElement) {
         Animation animation;
@@ -27,7 +27,7 @@ void AnimationManager::loadFromXML(std::string fileName, sf::Texture &t)
         animation.speed = 1.f / delay;
         animation.sprite.setTexture(t);
 
-        TiXmlElement *cut;
+        tinyxml2::XMLElement *cut;
         cut = animElement->FirstChildElement("cut");
         while (cut) {
             int x = atoi(cut->Attribute("x"));

@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "tinyxml.h"
+#include "tinyxml2.h"
 #include "Animation.h"
 
 class AnimationManager
