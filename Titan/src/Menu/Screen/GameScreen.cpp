@@ -110,8 +110,6 @@ int GameScreen::run(sf::RenderWindow &window)
     Object pl = lvl.getObject("player");
     Player Hero(animCharacter, lvl, pl.rect.left, pl.rect.top);
 
-
-    // ����������, ����� �� ������� ��� ������� ��������
     bool CanShoot = true;
 
     sf::Clock clock;
@@ -193,7 +191,6 @@ int GameScreen::run(sf::RenderWindow &window)
             }
         }
 
-        // ��������� ��������� ���� ���������, ���� �������� "�����", ������� �� �� �������
         for (it = entities.begin(); it != entities.end();) {
             Entity *b = *it;
             b->update(time);
@@ -205,19 +202,14 @@ int GameScreen::run(sf::RenderWindow &window)
 
         Hero.update(time);
 
-
-        //������������ �������������� ��������� ���� � ������
-        //������ ���� �������� ��������� ������ 0
         if (Hero.Health > 0) {
             for (it = entities.begin(); it != entities.end(); it++) {
-                //1. �����
                 if ((*it)->Name == "Enemy") {
                     Entity *enemy = *it;
 
                     if (enemy->Health <= 0)
                         continue;
 
-                    //���� �������� ��������� �� �����
                     if (Hero.getRect().intersects(enemy->getRect())) {
                         if (!Hero.hit) {
                             Hero.Health -= 50;
@@ -236,7 +228,6 @@ int GameScreen::run(sf::RenderWindow &window)
                         }
                     }
 
-                    //������������ ���� ����� � ���������
                     for (std::list<Entity *>::iterator it2 = entities.begin(); it2 != entities.end(); it2++) {
                         Entity *bullet = *it2;
                         if (bullet->Name == "Bullet")
