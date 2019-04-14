@@ -9,7 +9,7 @@ file(WRITE bin/settings/screensettings.txt)
 
 file(GLOB MUSIC Titan/res/*)
 file(COPY ${MUSIC} DESTINATION bin/res)
-file(COPY Titan/tileset_level_1.PNG DESTINATION bin)
+file(COPY Titan/res/levels/tileset_level_1.PNG DESTINATION bin)
 
 # TODO: Find a better solution. For now IDK how to resolve this shit :(
 # TODO: Duplicate _main symbol
