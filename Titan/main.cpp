@@ -40,11 +40,36 @@ int main()
 
     // Music settings
     float volume;
+    float defaultVolume = 50.0;
     float volumeCheck;
     float newVolume;
 
+    std::ifstream file;
+
+    file.open("settings/musicsettings.txt", std::ios::in);
+    if (!file) {
+        std::cerr << "Error open file: musicsettings.txt" << std::endl;
+    }
+
+    file >> volume;
+    file.close();
+
     MusicSettings musicSettings;
-    musicSettings.getSoundSettings(volume);
+    musicSettings.setSoundSettings(volume > 0 ? volume : defaultVolume);
+
+    file.open("settings/screensettings.txt", std::ios::in);
+    if (!file) {
+        std::cerr << "Error open file: screensettings.txt" << std::endl;
+    }
+
+    // 0 - window(default), 1 - fullscreen
+    bool screenMode;
+
+    file >> screenMode;
+    file.close();
+
+    ScreenSettings screenSettings;
+    screenSettings.setScreenSettings(screenMode > 0 ? screenMode : false);
 
     MenuMusic menuMusic;
     menuMusic.loadMusic(volume, "res/music/InMenuMusic.ogg");
