@@ -1,26 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-/*
-Обязательные анимации для персонажа:
-stay
-walk
-duck
-shoot
-jump
-hit
-
-Условные обозначения на карте:
-enemy
-player
-wall:
-    Если платформа наклонная, то в свойствах объекта указать тип:
-        SlopeLeft    подъем влево
-        SlopeRight   подъем вправо
-    Лестница тоже solid, указать тип:
-        ladder
-*/
-
 //Скорость игры
 const int gameSpeed = 500;
 

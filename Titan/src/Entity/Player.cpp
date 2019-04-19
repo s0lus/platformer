@@ -143,7 +143,6 @@ void Player::update(float time)
             animationManager.set("shoot");
             dx = 0;
         }
-        // CanShoot = false;
     }
 
     if (hit) {
@@ -184,8 +183,6 @@ void Player::update(float time)
 
 
     animationManager.tick(time);
-
-    //key["R"] = key["L"] = key["Up"] = key["Down"] = key["Space"] = false;
 }
 
 void Player::collision(int num)
