@@ -55,7 +55,7 @@ int main()
     file.close();
 
     MusicSettings musicSettings;
-    musicSettings.setSoundSettings(volume > 0 ? volume : defaultVolume);
+    musicSettings.setSoundSettings(volume >= 0 ? volume : defaultVolume);
 
     file.open("settings/screensettings.txt", std::ios::in);
     if (!file) {
