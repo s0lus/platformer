@@ -11,12 +11,6 @@
 
 struct Object
 {
-    int getPropertyInt(std::string name);
-
-    float getPropertyFloat(std::string name);
-
-    std::string getPropertyString(std::string name);
-
     std::string name;
     std::string type;
     sf::Rect<float> rect;
@@ -48,16 +42,9 @@ public:
 
     std::vector<Object> getAllObjects() const;
 
-    sf::Vector2i getTileSize() const;
-
-    float getHeight() const;
-
-    float getWidth() const;
-
 private:
     float width, height, tileWidth, tileHeight;
     int firstTileID;
-    sf::Rect<float> drawingBounds;
     sf::Texture tilesetImage;
     std::vector<Object> objects;
     std::vector<Layer> layers;

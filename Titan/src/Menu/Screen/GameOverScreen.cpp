@@ -60,10 +60,8 @@ int GameOverScreen::run(sf::RenderWindow &window)
     gameOverText.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
     gameOverText.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f));
 
-
-    bool running = true;
     sf::Event event;
-    while (running) {
+    while (true) {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 return (-1);

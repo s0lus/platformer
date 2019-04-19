@@ -95,12 +95,10 @@ int GraphicsScreen::run(sf::RenderWindow &window)
     help.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
     help.setPosition(sf::Vector2f(window.getSize().x / 2.0f, window.getSize().y / 2.0f + 250));
 
-
     sf::Event event;
-    bool running = true;
     int menu = 0;
 
-    while (running) {
+    while (true) {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 return (-1);
@@ -110,7 +108,6 @@ int GraphicsScreen::run(sf::RenderWindow &window)
                 switch (event.key.code) {
                     case sf::Keyboard::Escape:
                         return (2);
-                        break;
 
                     case sf::Keyboard::Right:
                         keyPressedSound.play();
@@ -124,21 +121,13 @@ int GraphicsScreen::run(sf::RenderWindow &window)
                         menu--;
                         break;
 
-                    case sf::Keyboard::Return:
-                        if (menu == 0) {
-                            okSound.play();
-                            okSound.setVolume(75);
-                            scrSet.setScreenSettings(true);
-                            // restart game for change resolution
-                            return (-1);
-                        } else {
-                            okSound.play();
-                            okSound.setVolume(75);
-                            scrSet.setScreenSettings(false);
-                            // restart game for change resolution
-                            return (-1);
-                        }
-                        break;
+                    case sf::Keyboard::Return: {
+                        okSound.play();
+                        okSound.setVolume(75);
+                        scrSet.setScreenSettings(menu == 0);
+                        // restart game for change resolution
+                        return (-1);
+                    }
 
                     default:
                         break;
@@ -171,6 +160,4 @@ int GraphicsScreen::run(sf::RenderWindow &window)
 
         window.display();
     }
-
-    return (-1);
 }

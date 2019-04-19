@@ -87,10 +87,9 @@ int MenuScreen::run(sf::RenderWindow &window)
 
 
     sf::Event event;
-    bool running = true;
     int menu = 0;
 
-    while (running) {
+    while (true) {
         while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed) {
                 return (-1);
@@ -171,6 +170,4 @@ int MenuScreen::run(sf::RenderWindow &window)
 
         window.display();
     }
-
-    return (-1);
 }

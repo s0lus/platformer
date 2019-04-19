@@ -147,10 +147,7 @@ int GameScreen::run(sf::RenderWindow &window)
                     if ((event.key.code == sf::Keyboard::Space) && CanShoot) {
                         arrowShoot.playMusic(false);
 
-                        if (!Hero.dir)
-                            entities.push_back(new Bullet(bulletCharacter, lvl, Hero.x + 18, Hero.y + 16, Hero.dir));
-                        else
-                            entities.push_back(new Bullet(bulletCharacter, lvl, Hero.x + 18, Hero.y + 16, Hero.dir));
+                        entities.push_back(new Bullet(bulletCharacter, lvl, Hero.x + 18, Hero.y + 16, Hero.dir));
 
                         CanShoot = false;
                         Hero.key["Space"] = true;

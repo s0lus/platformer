@@ -22,9 +22,6 @@
 
 class GameScreen : public Screen
 {
-private:
-    sf::Music arrowShoot;
-
 public:
     GameScreen();
 

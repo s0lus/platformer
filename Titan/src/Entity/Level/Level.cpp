@@ -6,21 +6,6 @@ Level::Level()
 Level::~Level()
 {}
 
-int Object::getPropertyInt(std::string name)
-{
-    return atoi(properties[name].c_str());
-}
-
-float Object::getPropertyFloat(std::string name)
-{
-    return (float) strtod(properties[name].c_str(), NULL);
-}
-
-std::string Object::getPropertyString(std::string name)
-{
-    return properties[name];
-}
-
 bool Level::loadFromFile(std::string filename)
 {
     tinyxml2::XMLDocument levelFile;
@@ -233,11 +218,6 @@ std::vector<Object> Level::getObjects(std::string name)
 std::vector<Object> Level::getAllObjects() const
 {
     return objects;
-};
-
-sf::Vector2i Level::getTileSize() const
-{
-    return sf::Vector2i(tileWidth, tileHeight);
 }
 
 void Level::draw(sf::RenderWindow &window)
@@ -247,14 +227,4 @@ void Level::draw(sf::RenderWindow &window)
             window.draw(layers[layer].tiles[tile]);
         }
     }
-}
-
-float Level::getHeight() const
-{
-    return height;
-}
-
-float Level::getWidth() const
-{
-    return width;
 }

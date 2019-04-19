@@ -22,7 +22,6 @@ void Enemy::update(float time)
 
     if (timer > 2200) {
         dx *= -1;
-        //timer = 0;
         dir = !dir;
         animationManager.flip(dx < 0);
         timer = 0;
