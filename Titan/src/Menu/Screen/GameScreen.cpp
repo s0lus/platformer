@@ -10,6 +10,7 @@ int GameScreen::run(sf::RenderWindow &window)
 {
     sf::View view(window.getView());
     view.zoom(0.50);
+//    view.setViewport(sf::FloatRect(0.25f, 0.25, 0.5f, 0.5f));
 
     // Loading level
     Level lvl;
@@ -238,13 +239,32 @@ int GameScreen::run(sf::RenderWindow &window)
             }
         }
 
-        view.setCenter(Hero.x, Hero.y);
+        float tempX = Hero.x;
+        float tempY = Hero.y;
+
+        if (Hero.x < 260) {
+            tempX = 260;
+
+            view.setCenter(tempX, tempY);
+        } else {
+            view.setCenter(Hero.x, Hero.y);
+        }
+
+        std::cout << Hero.x << " " << Hero.y << std::endl;
+
+//        float tempX = x; float tempY = y;
+//
+//        if (x < 320) tempX = 320;
+//        if (y < 240) tempY = 240;
+//        if (y > 554) tempY = 554;
+//
+//        view.setCenter(tempX, tempY);
 
         window.setView(view);
 
         window.clear();
 
-        std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
+//        std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
 
         lvl.draw(window);
 
