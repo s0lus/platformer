@@ -12,3 +12,12 @@
  ![game-3](https://cloud.githubusercontent.com/assets/4124371/22854825/8b1a5aaa-f086-11e6-8332-30b982a1f81f.png)
  
 </details>
+
+
+### Build
+
+```bash
+cmake .
+make -j4
+cd bin && ./platformer
+```
