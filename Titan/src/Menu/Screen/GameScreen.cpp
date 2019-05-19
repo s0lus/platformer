@@ -239,32 +239,40 @@ int GameScreen::run(sf::RenderWindow &window)
             }
         }
 
+        // TODO: Extract magic numbers to const
+        // TODO: Probably find a better way to cut off edges
         float tempX = Hero.x;
         float tempY = Hero.y;
 
+        // Cut off left side
         if (Hero.x < 260) {
             tempX = 260;
-
-            view.setCenter(tempX, tempY);
-        } else {
-            view.setCenter(Hero.x, Hero.y);
         }
 
-        std::cout << Hero.x << " " << Hero.y << std::endl;
+        // Cut off up side
+        if (Hero.y < 260) {
+            tempY = 260;
+        }
 
-//        float tempX = x; float tempY = y;
-//
-//        if (x < 320) tempX = 320;
-//        if (y < 240) tempY = 240;
-//        if (y > 554) tempY = 554;
-//
-//        view.setCenter(tempX, tempY);
+        // Cut off right side
+        if (Hero.x > 2945) {
+            tempX = 2945;
+        }
+
+        // Cut off down side
+        if (Hero.y > 450) {
+            tempY = 450;
+        }
+
+        view.setCenter(tempX, tempY);
+
+        std::cout << Hero.x << " " << Hero.y << std::endl;
 
         window.setView(view);
 
         window.clear();
 
-//        std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
+        std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
 
         lvl.draw(window);
 
