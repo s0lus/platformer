@@ -10,6 +10,7 @@ int GameScreen::run(sf::RenderWindow &window)
 {
     sf::View view(window.getView());
     view.zoom(0.50);
+//    view.setViewport(sf::FloatRect(0.25f, 0.25, 0.5f, 0.5f));
 
     // Loading level
     Level lvl;
@@ -238,7 +239,34 @@ int GameScreen::run(sf::RenderWindow &window)
             }
         }
 
-        view.setCenter(Hero.x, Hero.y);
+        // TODO: Extract magic numbers to const
+        // TODO: Probably find a better way to cut off edges
+        float tempX = Hero.x;
+        float tempY = Hero.y;
+
+        // Cut off left side
+        if (Hero.x < 260) {
+            tempX = 260;
+        }
+
+        // Cut off up side
+        if (Hero.y < 260) {
+            tempY = 260;
+        }
+
+        // Cut off right side
+        if (Hero.x > 2945) {
+            tempX = 2945;
+        }
+
+        // Cut off down side
+        if (Hero.y > 450) {
+            tempY = 450;
+        }
+
+        view.setCenter(tempX, tempY);
+
+        std::cout << Hero.x << " " << Hero.y << std::endl;
 
         window.setView(view);
 
