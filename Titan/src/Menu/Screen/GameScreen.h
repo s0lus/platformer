@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cmath>
 #include <iostream>
 #include <sstream>
 #include <list>
@@ -32,6 +33,6 @@ public:
 
     float getFPS(const sf::Time &time) const
     {
-        return 1.0f / time.asSeconds();
+        return std::round(1.0f / time.asSeconds());
     }
 };
