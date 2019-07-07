@@ -280,15 +280,14 @@ int GameScreen::run(sf::RenderWindow &window)
         fpsText.setString(fpsStream.str());
         fpsText.setCharacterSize(24);
         fpsText.setFillColor(sf::Color::Red);
-        fpsText.setPosition(Hero.x - 100, Hero.y);
+
+        fpsText.setPosition(tempX - 250, tempY - 180);
 
         view.setCenter(tempX, tempY);
 
         window.setView(view);
 
         window.clear();
-
-        std::cout << "fps: " << fpsStream.str() << std::endl;
 
         lvl.draw(window);
 

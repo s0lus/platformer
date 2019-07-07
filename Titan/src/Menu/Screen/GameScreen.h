@@ -32,6 +32,6 @@ public:
 
     float getFPS(const sf::Time &time) const
     {
-        return (1000000.0f / time.asMicroseconds());
+        return 1.0f / time.asSeconds();
     }
 };
