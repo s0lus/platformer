@@ -264,15 +264,30 @@ int GameScreen::run(sf::RenderWindow &window)
             tempY = 450;
         }
 
-        view.setCenter(tempX, tempY);
+        sf::Font fpsFont;
+        if (!fpsFont.loadFromFile("res/font/numbers.ttf")) {
+            std::cerr << "Error: can`t loading font - scoreFont.ttf" << std::endl;
+            return (-1);
+        }
 
-        std::cout << Hero.x << " " << Hero.y << std::endl;
+        float fps = getFPS(fpsClock.restart());
+
+        std::stringstream fpsStream;
+        fpsStream << fps;
+
+        sf::Text fpsText;
+        fpsText.setFont(fpsFont);
+        fpsText.setString(fpsStream.str());
+        fpsText.setCharacterSize(24);
+        fpsText.setFillColor(sf::Color::Red);
+
+        fpsText.setPosition(tempX - 250, tempY - 180);
+
+        view.setCenter(tempX, tempY);
 
         window.setView(view);
 
         window.clear();
-
-        std::cout << "fps: " << getFPS(fpsClock.restart()) << std::endl;
 
         lvl.draw(window);
 
@@ -281,6 +296,7 @@ int GameScreen::run(sf::RenderWindow &window)
 
         Hero.draw(window);
 
+        window.draw(fpsText);
         window.display();
     }
 

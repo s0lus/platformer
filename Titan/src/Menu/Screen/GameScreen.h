@@ -1,6 +1,8 @@
 #pragma once
 
+#include <cmath>
 #include <iostream>
+#include <sstream>
 #include <list>
 
 #include "Screen.h"
@@ -31,6 +33,6 @@ public:
 
     float getFPS(const sf::Time &time) const
     {
-        return (1000000.0f / time.asMicroseconds());
+        return std::round(1.0f / time.asSeconds());
     }
 };
