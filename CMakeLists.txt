@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
-project(Titan/platformer)
+project(platformer)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -g")
 set(EXECUTABLE_OUTPUT_PATH bin)
@@ -7,16 +7,16 @@ set(EXECUTABLE_OUTPUT_PATH bin)
 file(WRITE bin/settings/musicsettings.txt)
 file(WRITE bin/settings/screensettings.txt)
 
-file(GLOB MUSIC Titan/res/*)
+file(GLOB MUSIC res/*)
 file(COPY ${MUSIC} DESTINATION bin/res)
-file(COPY Titan/res/levels/tileset_level_1.PNG DESTINATION bin)
+file(COPY res/levels/tileset_level_1.PNG DESTINATION bin)
 
 # TODO: Find a better solution. For now IDK how to resolve this shit :(
 # TODO: Duplicate _main symbol
-file(REMOVE Titan/vendor/tinyxml2/xmltest.cpp Titan/vendor/tinyxml2/contrib/html5-printer.cpp)
+file(REMOVE vendor/tinyxml2/xmltest.cpp vendor/tinyxml2/contrib/html5-printer.cpp)
 
-include_directories(Titan/src/ Titan/vendor/tinyxml2)
-file(GLOB_RECURSE SOURCE_FILES Titan/*)
+include_directories(src/ vendor/tinyxml2)
+file(GLOB_RECURSE SOURCE_FILES src/* vendor/*)
 add_executable(platformer ${SOURCE_FILES})
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
