@@ -34,7 +34,6 @@ bool Level::loadFromFile(std::string filename)
         return false;
     }
 
-
     img.createMaskFromColor(sf::Color::White);
     tilesetImage.loadFromImage(img);
     tilesetImage.setSmooth(false);
@@ -87,27 +86,40 @@ bool Level::loadFromFile(std::string filename)
         int y = 0;
 
         while (tileElement) {
-            int tileGID = atoi(tileElement->Attribute("gid"));
-            int subRectToUse = tileGID - firstTileID;
+            const char* gid = tileElement->Attribute("gid");
+            if (gid != NULL) {
+                int tileGID = atoi(gid);
+                int subRectToUse = tileGID - firstTileID;
 
-            if (subRectToUse >= 0) {
-                sf::Sprite sprite;
-                sprite.setTexture(tilesetImage);
-                sprite.setTextureRect(subRects[subRectToUse]);
-                sprite.setPosition(x * tileWidth, y * tileHeight);
-                sprite.setColor(sf::Color(255, 255, 255, layer.opacity));
+                if (subRectToUse >= 0) {
+                    sf::Sprite sprite;
+                    sprite.setTexture(tilesetImage);
+                    sprite.setTextureRect(subRects[subRectToUse]);
+                    sprite.setPosition(x * tileWidth, y * tileHeight);
+                    sprite.setColor(sf::Color(255, 255, 255, layer.opacity));
 
-                layer.tiles.push_back(sprite);
-            }
+                    layer.tiles.push_back(sprite);
+                }
 
-            tileElement = tileElement->NextSiblingElement("tile");
+                tileElement = tileElement->NextSiblingElement("tile");
 
-            x++;
-            if (x >= width) {
-                x = 0;
-                y++;
-                if (y >= height)
-                    y = 0;
+                x++;
+                if (x >= width) {
+                    x = 0;
+                    y++;
+                    if (y >= height)
+                        y = 0;
+                }
+            } else {
+                x++;
+                if (x >= width) {
+                    x = 0;
+                    y++;
+                    if (y >= height)
+                        y = 0;
+                }
+
+                tileElement = tileElement->NextSiblingElement("tile");
             }
         }
 
