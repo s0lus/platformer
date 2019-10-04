@@ -14,7 +14,7 @@ int GameScreen::run(sf::RenderWindow &window)
 
     // Loading level
     Level lvl;
-    lvl.loadFromFile("res/levels/level_1.tmx");
+    lvl.loadFromFile("res/levels/level-1.tmx");
 
 
     // --------------------- Initialization main character --------------------- //
