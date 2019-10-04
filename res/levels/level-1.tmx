@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="33" height="18" tilewidth="16" tileheight="16" infinite="0" nextlayerid="45" nextobjectid="26">
+<map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="33" height="18" tilewidth="16" tileheight="16" infinite="0" nextlayerid="56" nextobjectid="29">
  <tileset firstgid="1" name="castle-tileset" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="tileset.png" width="128" height="256"/>
  </tileset>
- <layer id="41" name="background" width="33" height="18" locked="1">
+ <layer id="49" name="background" width="33" height="18">
   <data>
    <tile gid="92"/>
    <tile gid="92"/>
@@ -601,7 +601,7 @@
    <tile gid="92"/>
   </data>
  </layer>
- <layer id="44" name="bacground-wall" width="33" height="18" locked="1">
+ <layer id="50" name="bacground-wall" width="33" height="18">
   <data>
    <tile gid="10"/>
    <tile gid="10"/>
@@ -1199,7 +1199,7 @@
    <tile gid="10"/>
   </data>
  </layer>
- <layer id="42" name="bricks" width="33" height="18" locked="1">
+ <layer id="51" name="bricks" width="33" height="18">
   <data>
    <tile/>
    <tile/>
@@ -1797,7 +1797,7 @@
    <tile/>
   </data>
  </layer>
- <layer id="43" name="internal-objects" width="33" height="18" locked="1">
+ <layer id="52" name="internal-objects" width="33" height="18">
   <data>
    <tile/>
    <tile/>
@@ -2415,5 +2415,14 @@
   <object id="23" x="0.3333" y="-3.55271e-15" width="15.3334" height="256"/>
   <object id="24" x="16.0833" y="0.166667" width="496.5" height="15"/>
   <object id="25" x="496.333" y="112.333" width="16.3333" height="15.6667"/>
+ </objectgroup>
+ <objectgroup id="53" name="player">
+  <object id="26" name="player" x="33" y="212" width="17" height="25.3333"/>
+ </objectgroup>
+ <objectgroup id="54" name="enemy1">
+  <object id="27" name="enemy1" x="139.667" y="134" width="27" height="24.6667"/>
+ </objectgroup>
+ <objectgroup id="55" name="enemy2">
+  <object id="28" name="enemy2" x="404" y="163.667" width="28.3333" height="27.6667"/>
  </objectgroup>
 </map>
