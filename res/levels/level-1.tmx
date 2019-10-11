@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.1" orientation="orthogonal" renderorder="right-down" width="33" height="18" tilewidth="16" tileheight="16" infinite="0" nextlayerid="56" nextobjectid="29">
- <tileset firstgid="1" name="castle-tileset" tilewidth="16" tileheight="16" tilecount="128" columns="8">
+ <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16" tilecount="128" columns="8">
   <image source="tileset.png" width="128" height="256"/>
  </tileset>
  <layer id="49" name="background" width="33" height="18">
