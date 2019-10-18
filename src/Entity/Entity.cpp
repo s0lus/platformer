@@ -40,6 +40,7 @@ void Entity::option(sf::String NAME, float SPEED, int HEALTH, sf::String FIRST_A
     Name = NAME;
     if (FIRST_ANIM != "") {
         animationManager.set(FIRST_ANIM);
+        animationManager.animationList["stay"].loop = true;
     }
 
     w = animationManager.getWidth();
