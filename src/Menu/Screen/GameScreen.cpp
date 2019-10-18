@@ -21,11 +21,11 @@ int GameScreen::run(sf::RenderWindow &window)
 
     // Loading main character
     sf::Texture spriteCharacter;
-    spriteCharacter.loadFromFile("res/player/Hero_1.png");
+    spriteCharacter.loadFromFile("res/player/knight-idle.png");
 
     // Loading animation for main character
     AnimationManager animCharacter;
-    animCharacter.loadFromXML("res/player/hero.xml", spriteCharacter);
+    animCharacter.loadFromXML("res/player/knight-idle.xml", spriteCharacter);
     animCharacter.animationList["jump"].loop = 0;
     animCharacter.animationList["walk"].loop = 1;
     animCharacter.animationList["shoot"].loop = 0;
