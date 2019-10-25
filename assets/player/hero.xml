@@ -5,5 +5,9 @@
   <cut col="1" x="252,25" w="41,75" row="1" y="190,75" h="35,25"/>
   <cut col="1" x="301,5" w="37,5" row="1" y="190,75" h="35,25"/>
  </animation>
+ <animation title="walk" delay="135">
+  <cut col="1" x="67" w="20" row="1" y="45" h="28"/>
+  <cut col="1" x="116" w="20" row="1" y="46" h="27"/>
+  <cut col="1" x="166" w="20" row="1" y="48" h="25"/>
+ </animation>
 </sprites>
-
