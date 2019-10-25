@@ -10,4 +10,7 @@
   <cut col="1" x="116" w="20" row="1" y="46" h="27"/>
   <cut col="1" x="166" w="20" row="1" y="48" h="25"/>
  </animation>
+ <animation title="sit" delay="150">
+  <cut col="1" x="265" w="20" row="1" y="14" h="22"/>
+ </animation>
 </sprites>
