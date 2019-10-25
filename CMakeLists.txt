@@ -9,7 +9,8 @@ file(WRITE bin/settings/screensettings.txt)
 
 file(GLOB MUSIC res/*)
 file(COPY ${MUSIC} DESTINATION bin/res)
-file(COPY res/levels/tileset.png DESTINATION bin)
+file(COPY assets/map/castle.png DESTINATION bin)
+file(COPY assets DESTINATION bin)
 
 # TODO: Find a better solution. For now IDK how to resolve this shit :(
 # TODO: Duplicate _main symbol
